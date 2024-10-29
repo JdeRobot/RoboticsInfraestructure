@@ -50,7 +50,7 @@ def generate_launch_description():
     gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={'gz_args': ['-r -s -v4 ', world], 'on_exit_shutdown': 'true'}.items()
+        launch_arguments={'gz_args': ['-r -s -v4 ', world_path], 'on_exit_shutdown': 'true'}.items()
     )
 
     # declare_x_cmd = DeclareLaunchArgument(
@@ -105,7 +105,7 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    ld.add_action(SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', robot_model_dir))
+    ld.add_action(SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', gazebo_models_path))
     set_env_vars_resources = AppendEnvironmentVariable('GZ_SIM_RESOURCE_PATH', os.path.join(package_dir,'models'))
     ld.add_action(set_env_vars_resources)
     ld.add_action(gazebo_server)
