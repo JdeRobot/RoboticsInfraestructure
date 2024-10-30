@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <sdf version="1.9">
-  <world name="world">
+  <world name="default">
     <plugin
       filename="gz-sim-physics-system"
       name="gz::sim::systems::Physics">
