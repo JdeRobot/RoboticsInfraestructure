@@ -41,12 +41,6 @@ def generate_launch_description():
     worlds_dir = "/opt/jderobot/Worlds"
     world_path = os.path.join(worlds_dir, world_file_name)
 
-
-    # gazebo_client = IncludeLaunchDescription(
-	# PythonLaunchDescriptionSource(
-    #         os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')),
-    #     launch_arguments={'gz_args': '-g -v4 '}.items()
-    #  )
     gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')),
