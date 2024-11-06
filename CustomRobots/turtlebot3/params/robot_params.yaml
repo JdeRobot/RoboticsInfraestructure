@@ -1,16 +1,3 @@
-# - ros_topic_name: "clock"
-#   gz_topic_name: "clock"
-#   ros_type_name: "rosgraph_msgs/msg/Clock"
-#   gz_type_name: "gz.msgs.Clock"
-#   direction: GZ_TO_ROS
-
-# gz topic published by JointState plugin
-# - ros_topic_name: "turtlebot3/joint_states"
-#   gz_topic_name: "turtlebot3/joint_states"
-#   ros_type_name: "sensor_msgs/msg/JointState"
-#   gz_type_name: "gz.msgs.Model"
-#   direction: GZ_TO_ROS
-
 # gz topic published by DiffDrive plugin
 - ros_topic_name: "turtlebot3/odom"
   gz_topic_name: "turtlebot3/odom"
@@ -18,12 +5,6 @@
   gz_type_name: "gz.msgs.Odometry"
   direction: GZ_TO_ROS
 
-# gz topic published by DiffDrive plugin
-# - ros_topic_name: "turtlebot3/tf"
-#   gz_topic_name: "turtlebot3/tf"
-#   ros_type_name: "tf2_msgs/msg/TFMessage"
-#   gz_type_name: "gz.msgs.Pose_V"
-#   direction: GZ_TO_ROS
 
 # gz topic subscribed to by DiffDrive plugin
 - ros_topic_name: "turtlebot3/cmd_vel"
@@ -52,17 +33,4 @@
   gz_topic_name: "turtlebot3/camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
-  direction: GZ_TO_ROS
-
-# gz topic published by Sensors plugin (Camera)
-# - ros_topic_name: "camera/depth"
-#   gz_topic_name: "depth_camera"
-#   ros_type_name: "sensor_msgs/msg/Image"
-#   gz_type_name: "gz.msgs.Image"
-#   direction: GZ_TO_ROS
-
-- ros_topic_name: "turtlebot3/camera/image_raw"
-  gz_topic_name: "turtlebot3/camera/image_raw"
-  ros_type_name: "sensor_msgs/msg/Image"
-  gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
