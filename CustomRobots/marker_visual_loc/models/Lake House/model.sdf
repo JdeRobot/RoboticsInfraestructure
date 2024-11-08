@@ -3,7 +3,7 @@
   <model name="house">
     <static>true</static>
     <link name="base_link">
-      <visual name="Concrete_visual">
+      <!-- <visual name="Concrete_visual">
         <geometry>
           <mesh>
             <uri>model://Lake House/meshes/house.dae</uri>
@@ -23,14 +23,8 @@
               <roughness_map>model://Lake House/materials/textures/ConcreteTiles_Roughness.png</roughness_map>
             </metal>
           </pbr>
-          <!-- fallback to script if no PBR support-->
-          <!-- <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/ConcreteTiles_Diffuse</name>
-          </script> -->
         </material>
-      </visual>
+      </visual> -->
       <visual name="Siding_visual">
         <geometry>
           <mesh>
@@ -51,12 +45,6 @@
               <roughness_map>model://Lake House/materials/textures/Siding_Roughness.png</roughness_map>
             </metal>
           </pbr>
-          <!-- fallback to script if no PBR support-->
-          <!-- <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Siding_Diffuse</name>
-          </script> -->
         </material>
       </visual>
       <visual name="WhiteWood_visual">
@@ -199,7 +187,7 @@
           </script> -->
         </material>
       </visual>
-      <visual name="Asphalt_visual">
+      <!-- <visual name="Asphalt_visual">
         <geometry>
           <mesh>
             <uri>model://Lake House/meshes/house.dae</uri>
@@ -219,14 +207,8 @@
               <roughness_map>model://Lake House/materials/textures/Asphalt_Roughness.png</roughness_map>
             </metal>
           </pbr>
-          <!-- fallback to script if no PBR support-->
-          <!-- <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Asphalt_Diffuse</name>
-          </script> -->
         </material>
-      </visual>
+      </visual> -->
       <visual name="Baseboard_visual">
         <geometry>
           <mesh>
@@ -247,15 +229,9 @@
               <roughness_map>model://Lake House/materials/textures/Baseboard_Roughness.png</roughness_map>
             </metal>
           </pbr>
-          <!-- fallback to script if no PBR support-->
-          <!-- <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Baseboard_Diffuse</name>
-          </script> -->
         </material>
       </visual>
-      <visual name="Cobblestone_visual">
+      <!-- <visual name="Cobblestone_visual">
         <geometry>
           <mesh>
             <uri>model://Lake House/meshes/house.dae</uri>
@@ -275,14 +251,8 @@
               <roughness_map>model://Lake House/materials/textures/Cobblestone_Roughness.png</roughness_map>
             </metal>
           </pbr>
-          <!-- fallback to script if no PBR support-->
-          <!-- <script>
-            <uri>model://Lake House/materials/scripts/</uri>
-            <uri>model://Lake House/materials/textures/</uri>
-            <name>Fallback/Cobblestone_Diffuse</name>
-          </script> -->
         </material>
-      </visual>
+      </visual> -->
       <visual name="Cabinets_visual">
         <geometry>
           <mesh>

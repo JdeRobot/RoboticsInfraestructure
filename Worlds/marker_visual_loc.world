@@ -24,8 +24,12 @@
       name="gz::sim::systems::Imu">
     </plugin>
 
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+
     <light type="directional" name="sun">
-      <cast_shadows>true</cast_shadows>
+      <!-- <cast_shadows>true</cast_shadows> -->
       <pose>0 0 20 -1.3 0 0.5</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.01 0.01 0.01 1</specular>
@@ -42,7 +46,7 @@
         <constant>0.8</constant>
         <quadratic>0.01</quadratic>
       </attenuation>
-      <cast_shadows>true</cast_shadows>
+      <!-- <cast_shadows>true</cast_shadows> -->
       <visualize>false</visualize>
     </light>
     <light type="point" name="point_light_01">
@@ -107,10 +111,10 @@
       <uri>model://Coast Waves 2</uri>
       <pose>0 0 0 0 0 0</pose>
     </include> -->
-    <include>
+    <!-- <include>
       <name>Terrain</name>
       <uri>model://Terrain</uri>
-    </include>
+    </include> -->
     <!-- <include>
       <name>Terrain Objects</name>
       <uri>model://Terrain Objects</uri>
