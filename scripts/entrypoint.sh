@@ -10,7 +10,7 @@ optional arguments:\n
 
 debug=false
 log=false
-webserver=false
+webserver=true
 
 while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
   -h | --help )
