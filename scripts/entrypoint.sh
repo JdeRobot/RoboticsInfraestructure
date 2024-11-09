@@ -40,7 +40,9 @@ else
     runserver=""
 fi
 
-runram="python3 src/manager/manager/manager.py 0.0.0.0 7163"
+export PYTHONPATH="/RoboticsApplicationManager"
+
+runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
 root="cd /"
 
 # TEST LOGS
