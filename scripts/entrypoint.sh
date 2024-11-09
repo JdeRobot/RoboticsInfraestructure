@@ -43,7 +43,6 @@ fi
 export PYTHONPATH="/RoboticsApplicationManager"
 
 runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
-runram=""
 root="cd /"
 
 # TEST LOGS
