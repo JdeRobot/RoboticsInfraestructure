@@ -32,35 +32,35 @@ def generate_launch_description():
     )
 
     # Launch configuration variables specific to simulation
-    x_pose = LaunchConfiguration('x_pose', default='1.0')
-    y_pose = LaunchConfiguration('y_pose', default='-1.5')
-    z_pose = LaunchConfiguration('z_pose', default='7.1')
+    # x_pose = LaunchConfiguration('x_pose', default='1.0')
+    # y_pose = LaunchConfiguration('y_pose', default='-1.5')
+    # z_pose = LaunchConfiguration('z_pose', default='7.1')
 
     # Declare the launch arguments
-    declare_x_position_cmd = DeclareLaunchArgument(
-        'x_pose', default_value='1.0',
-        description='Specify namespace of the robot')
+    # declare_x_position_cmd = DeclareLaunchArgument(
+    #     'x_pose', default_value='1.0',
+    #     description='Specify namespace of the robot')
 
-    declare_y_position_cmd = DeclareLaunchArgument(
-        'y_pose', default_value='-1.5',
-        description='Specify namespace of the robot')
+    # declare_y_position_cmd = DeclareLaunchArgument(
+    #     'y_pose', default_value='-1.5',
+    #     description='Specify namespace of the robot')
     
-    declare_z_position_cmd = DeclareLaunchArgument(
-        'z_pose', default_value='7.1',
-        description='Specify namespace of the robot')
+    # declare_z_position_cmd = DeclareLaunchArgument(
+    #     'z_pose', default_value='7.1',
+    #     description='Specify namespace of the robot')
 
-    start_gazebo_ros_spawner_cmd = Node(
-        package='ros_gz_sim',
-        executable='create',
-        arguments=[
-            '-name', 'waffle',
-            '-file', urdf_path,
-            '-x', x_pose,
-            '-y', y_pose,
-            '-z', z_pose
-        ],
-        output='screen',
-    )
+    # start_gazebo_ros_spawner_cmd = Node(
+    #     package='ros_gz_sim',
+    #     executable='create',
+    #     arguments=[
+    #         '-name', 'waffle',
+    #         '-file', urdf_path,
+    #         '-x', x_pose,
+    #         '-y', y_pose,
+    #         '-z', z_pose
+    #     ],
+    #     output='screen',
+    # )
 
     bridge_params = os.path.join(
         get_package_share_directory('custom_robots'),
@@ -96,12 +96,12 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     # Declare the launch options
-    ld.add_action(declare_x_position_cmd)
-    ld.add_action(declare_y_position_cmd)
-    ld.add_action(declare_z_position_cmd)
+    # ld.add_action(declare_x_position_cmd)
+    # ld.add_action(declare_y_position_cmd)
+    # ld.add_action(declare_z_position_cmd)
 
     # Add any conditioned actions
-    ld.add_action(start_gazebo_ros_spawner_cmd)
+    # ld.add_action(start_gazebo_ros_spawner_cmd)
     ld.add_action(start_gazebo_ros_bridge_cmd)
     ld.add_action(start_gazebo_ros_image_bridge_cmd)
     ld.add_action(start_gazebo_ros_depth_bridge_cmd)
