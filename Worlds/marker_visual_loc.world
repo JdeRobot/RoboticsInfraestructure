@@ -2,6 +2,12 @@
 
 <sdf version="1.9">
   <world name="default">
+
+    <plugin
+      filename="ignition-gazebo-pose-publisher-system"
+      name="ignition::gazebo::systems::PosePublisher">
+    </plugin>
+
     <plugin
       filename="gz-sim-physics-system"
       name="gz::sim::systems::Physics">
@@ -19,10 +25,10 @@
       name="gz::sim::systems::Sensors">
       <render_engine>ogre2</render_engine>
     </plugin>
-    <plugin
+    <!-- <plugin
       filename="gz-sim-imu-system"
       name="gz::sim::systems::Imu">
-    </plugin>
+    </plugin> -->
 
     <scene>
       <shadows>false</shadows>
