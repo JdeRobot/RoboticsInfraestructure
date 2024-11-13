@@ -140,6 +140,8 @@ install(DIRECTORY
   3d_reconstruction/models
   3d_reconstruction/worlds
 
+  restaurant/models
+
   DESTINATION share/${PROJECT_NAME}
 )
 
