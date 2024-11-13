@@ -96,7 +96,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://cafe/meshes/cafe.dae</uri>
+            <uri>model://restaurant/meshes/restaurant.dae</uri>
           </mesh>
         </geometry>
       </visual>
