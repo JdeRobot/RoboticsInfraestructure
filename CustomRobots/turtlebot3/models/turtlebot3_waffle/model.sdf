@@ -548,13 +548,7 @@
       <child_frame_id>base_footprint</child_frame_id>
 
     </plugin>
-
-    <!-- <plugin filename="gz-sim-joint-state-publisher-system"
-      name="gz::sim::systems::JointStatePublisher">
-      <topic>joint_states</topic>
-      <joint_name>wheel_left_joint</joint_name>
-      <joint_name>wheel_right_joint</joint_name>
-    </plugin>     -->
-
   </model>
+
+  
 </sdf>
