@@ -7,11 +7,13 @@ optional arguments:\n
 \t  --debug run bash inside RADI\n
 \t  --logs record logs and run RADI\n
 \t  --no-server run RADI without webserver
-\t  --server run RADI with webserver"
+\t  --server run RADI with webserver
+\t  --bt run BT Studio"
 
 debug=false
 log=false
 webserver=true
+btstudio=false
 
 while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
   -h | --help )
@@ -30,6 +32,9 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
   -s | --server )
     webserver=true
     ;;
+  --bt )
+    btstudio=true
+    ;;
 esac; shift; done
 if [[ "$1" == '--' ]]; then shift; fi
 
@@ -44,6 +49,12 @@ else
     runserver=""
 fi
 
+if [ $btstudio == true ]; then
+    runbt="python3 /BtStudio/backend/manage.py runserver 0.0.0.0:7164"
+else
+    runbt=""
+fi
+
 runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
 root="cd /"
 
@@ -51,7 +62,7 @@ root="cd /"
 if [ $log == true ]; then
     DATE_TIME=$(date +%F-%H-%M) # FORMAT year-month-date-hours-mins
     mkdir -p /root/.roboticsacademy/log/$DATE_TIME/
-    script -q -c "$root & $runserver & $runram ;" /root/.roboticsacademy/log/$DATE_TIME/manager.log
+    script -q -c "$root & $runserver & $runbt & $runram ;" /root/.roboticsacademy/log/$DATE_TIME/manager.log
     cp -r /root/.ros/log/* /root/.roboticsacademy/log/$DATE_TIME
 else
     if [ $debug == true ]; then
