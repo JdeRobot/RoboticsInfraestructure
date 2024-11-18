@@ -40,6 +40,13 @@
         <pose>2 2 0 0 -0 1.60052</pose>
       </include>
     </model>
+    <model name="OfficeChairBlack_2">
+      <include>
+        <uri>model://OfficeChairBlack</uri>
+        <static>true</static>
+        <pose>2 2 0 0 -0 3.13125</pose>
+      </include>
+    </model>
     <model name="AdjTable_1">
       <include>
         <uri>model://AdjTable</uri>
