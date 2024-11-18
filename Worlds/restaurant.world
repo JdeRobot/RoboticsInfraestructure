@@ -24,7 +24,7 @@
     </include>
     <include>
 	    <uri>model://restaurant</uri>
-	    <pose>0 0 0 0 0 0</pose>
+	    <pose>0 0 -0.2 0 0 0</pose>
     </include>
 		<include>
       <uri>model://ground_plane_sincolor</uri>
@@ -37,14 +37,14 @@
       <include>
         <uri>model://FemaleVisitorSit</uri>
         <static>true</static>
-        <pose>2 2 0.1 0 -0 1.60052</pose>
+        <pose>2 2 0 0 -0 1.60052</pose>
       </include>
     </model>
     <model name="Chair_1">
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
-        <pose>2 2 0.1 0 -0 0</pose>
+        <pose>2 2 0 0 -0 0</pose>
       </include>
     </model>
     <model name="AdjTable_1">
