@@ -31,7 +31,21 @@
     </include>
     <include>
       <uri>model://roombaROS</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0.1 0 0 0</pose>
     </include>
+    <model name="FemaleVisitorSit_1">
+      <include>
+        <uri>model://FemaleVisitorSit</uri>
+        <static>true</static>
+        <pose>2 2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="AdjTable_1">
+      <include>
+        <uri>model://AdjTable</uri>
+        <static>true</static>
+        <pose>-1 2 0 0 0 -0.008733</pose>
+      </include>
+    </model>
   </world>
 </sdf>
