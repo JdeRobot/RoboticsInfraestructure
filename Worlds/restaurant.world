@@ -3,7 +3,7 @@
   <world name="default">
     <gui fullscreen='1'>
       <camera name='user_camera'>
-        <pose >-78.70 39.10 1.32 0.00 0.21 -0.37</pose>
+        <pose frame=''>0 3.5 19 0.00 1.57 -1.57</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -23,8 +23,12 @@
       <pose>0 0 1 0 0 0</pose>
     </include>
     <include>
-	    <uri>model://house_int2</uri>
+	    <uri>model://restaurant</uri>
 	    <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://roombaROS</uri>
+      <pose>-1 1.5 0 0 0 0</pose>
     </include>
   </world>
 </sdf>
