@@ -23,7 +23,7 @@
       <pose>0 0 1 0 0 0</pose>
     </include>
     <include>
-	    <uri>model://restaurant</uri>
+	    <uri>model://house_int2</uri>
 	    <pose>0 0 0 0 0 0</pose>
     </include>
   </world>
