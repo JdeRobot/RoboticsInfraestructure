@@ -47,5 +47,12 @@
         <pose>-1 2 0 0 0 -0.008733</pose>
       </include>
     </model>
+    <model name="aws_robomaker_residential_CoffeeTable_01_1">
+      <include>
+        <uri>model://aws_robomaker_residential_CoffeeTable_01</uri>
+        <static>true</static>
+        <pose>-3 0 0 0 -0 0</pose>
+      </include>
+    </model>
   </world>
 </sdf>
