@@ -51,12 +51,10 @@ else
 fi
 
 if [ $btstudio == true ]; then
-    runbt="python3 /BtStudio/backend/manage.py runserver 0.0.0.0:7164 & $(cd /BtStudio/frontend && yarn start)"
+    runbt="python3 /BtStudio/backend/manage.py runserver 0.0.0.0:7164"
 else
     runbt=""
 fi
-
-echo BTSTUDIO "$runbt"
 
 runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
 root="cd /"
