@@ -34,6 +34,7 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
     ;;
   --bt )
     btstudio=true
+    webserver=false
     ;;
 esac; shift; done
 if [[ "$1" == '--' ]]; then shift; fi
@@ -50,10 +51,12 @@ else
 fi
 
 if [ $btstudio == true ]; then
-    runbt="python3 /BtStudio/backend/manage.py runserver 0.0.0.0:7164"
+    runbt="python3 /BtStudio/backend/manage.py runserver 0.0.0.0:7164 & $(cd /BtStudio/frontend && yarn start)"
 else
     runbt=""
 fi
+
+echo BTSTUDIO "$runbt"
 
 runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
 root="cd /"
