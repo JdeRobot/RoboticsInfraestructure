@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- 
+  Copyright (c) 2024 PAL Robotics S.L. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- INCLUDES -->
+  <xacro:include filename="$(find tiago_description)/ros2_control/transmissions.urdf.xacro" />
+
+  <!-- MACRO DEFINITION-->
+  <xacro:macro name="ros2_control_torso" params="name reduction">
+
+    <joint name="${name}_joint">
+      <command_interface name="position" />
+
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+
+    <xacro:tiago_simple_transmission name="${name}" reduction="${reduction}" />
+
+  </xacro:macro>
+
+</robot>
