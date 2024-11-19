@@ -35,11 +35,6 @@
     </include>
     <model name="Table1_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-2.8 -10.4 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>-2.8 -10.4 0 0 -0 0</pose>
@@ -47,22 +42,12 @@
     </model>
     <model name="Table1_Chair2">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-2.8 -9.7 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>-2.8 -9.7 0 0 -0 0</pose>
       </include>
     </model>
     <model name="Table1_Chair3">
-      <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-1.6 -10.4 0 0 -0 -1.60052</pose>
-      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -277,11 +262,6 @@
     </model>
     <model name="Table3_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>1.2 -10.4 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>1.2 -10.4 0 0 -0 0</pose>
@@ -289,22 +269,12 @@
     </model>
     <model name="Table3_Chair2">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>1.2 -9.7 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>1.2 -9.7 0 0 -0 0</pose>
       </include>
     </model>
     <model name="Table3_Chair3">
-      <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>2.4 -10.4 0 0 -0 -1.60052</pose>
-      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -398,11 +368,6 @@
     </model>
     <model name="Table4_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>3.1 -9.2 0 0 -0 -3.14</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>3.1 -9.2 0 0 -0 1.60052</pose>
@@ -410,22 +375,12 @@
     </model>
     <model name="Table4_Chair2">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>3.1 -8 0 0 -0 0</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>3.1 -8 0 0 -0 -1.60052</pose>
       </include>
     </model>
     <model name="Table4_Chair3">
-      <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>3.8 -9.2 0 0 -0 -3.14</pose>
-      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -519,7 +474,7 @@
     </model>
     <model name="Table5_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
+        <uri>model://MaleVisitorSit</uri>
         <static>true</static>
         <pose>3.1 -7.2 0 0 -0 -3.14</pose>
       </include>
@@ -554,6 +509,11 @@
       </include>
     </model>
     <model name="Table5_Chair4">
+      <include>
+        <uri>model://VisitorKidSit</uri>
+        <static>true</static>
+        <pose>3.8 -7.2 0 0 -0 -3.14</pose>
+      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -640,7 +600,7 @@
     </model>
     <model name="Table6_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
+        <uri>model://MaleVisitorSit</uri>
         <static>true</static>
         <pose>-2.8 -7.9 0 0 -0 1.60052</pose>
       </include>
@@ -652,7 +612,7 @@
     </model>
     <model name="Table6_Chair2">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
+        <uri>model://MaleVisitorSit</uri>
         <static>true</static>
         <pose>-2.8 -7.2 0 0 -0 1.60052</pose>
       </include>
@@ -664,7 +624,7 @@
     </model>
     <model name="Table6_Chair3">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
+        <uri>model://MaleVisitorSit</uri>
         <static>true</static>
         <pose>-1.6 -7.9 0 0 -0 -1.60052</pose>
       </include>
@@ -675,6 +635,11 @@
       </include>
     </model>
     <model name="Table6_Chair4">
+      <include>
+        <uri>model://MaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-1.6 -7.2 0 0 -0 -1.60052</pose>
+      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -761,11 +726,6 @@
     </model>
     <model name="Table7_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-0.8 -7.9 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>-0.8 -7.9 0 0 -0 0</pose>
@@ -773,22 +733,12 @@
     </model>
     <model name="Table7_Chair2">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-0.8 -7.2 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>-0.8 -7.2 0 0 -0 0</pose>
       </include>
     </model>
     <model name="Table7_Chair3">
-      <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>0.4 -7.9 0 0 -0 -1.60052</pose>
-      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -882,11 +832,6 @@
     </model>
     <model name="Table8_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-2.8 -5.4 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>-2.8 -5.4 0 0 -0 0</pose>
@@ -894,22 +839,12 @@
     </model>
     <model name="Table8_Chair2">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-2.8 -4.7 0 0 -0 1.60052</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>-2.8 -4.7 0 0 -0 0</pose>
       </include>
     </model>
     <model name="Table8_Chair3">
-      <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>-1.6 -5.4 0 0 -0 -1.60052</pose>
-      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -1003,7 +938,7 @@
     </model>
     <model name="Table9_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
+        <uri>model://MaleVisitorSit</uri>
         <static>true</static>
         <pose>-0.8 -5.4 0 0 -0 1.60052</pose>
       </include>
@@ -1027,7 +962,7 @@
     </model>
     <model name="Table9_Chair3">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
+        <uri>model://VisitorKidSit</uri>
         <static>true</static>
         <pose>0.4 -5.4 0 0 -0 -1.60052</pose>
       </include>
@@ -1124,11 +1059,6 @@
     </model>
     <model name="Table10_Chair1">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>3.1 -5.2 0 0 -0 -3.14</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>3.1 -5.2 0 0 -0 1.60052</pose>
@@ -1136,22 +1066,12 @@
     </model>
     <model name="Table10_Chair2">
       <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>3.1 -4 0 0 -0 0</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>3.1 -4 0 0 -0 -1.60052</pose>
       </include>
     </model>
     <model name="Table10_Chair3">
-      <include>
-        <uri>model://FemaleVisitorSit</uri>
-        <static>true</static>
-        <pose>3.8 -5.2 0 0 -0 -3.14</pose>
-      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
@@ -1245,11 +1165,6 @@
     </model>
     <model name="Table11_Chair1">
       <include>
-        <uri>model://MaleVisitorSit</uri>
-        <static>true</static>
-        <pose>3.1 -3.2 0 0 -0 -3.14</pose>
-      </include>
-      <include>
         <uri>model://Chair</uri>
         <static>true</static>
         <pose>3.1 -3.2 0 0 -0 1.60052</pose>
@@ -1263,11 +1178,6 @@
       </include>
     </model>
     <model name="Table11_Chair3">
-      <include>
-        <uri>model://VisitorKidSit</uri>
-        <static>true</static>
-        <pose>3.8 -3.2 0 0 -0 -3.14</pose>
-      </include>
       <include>
         <uri>model://Chair</uri>
         <static>true</static>
