@@ -19,7 +19,7 @@
 
     <include>
       <uri>model://amazon_robot</uri>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0.1 0 0 0</pose>
     </include>
     
     <!--model name="aws_robomaker_warehouse_RoofB_01_001">
