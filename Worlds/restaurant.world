@@ -30,7 +30,7 @@
       <uri>model://ground_plane_sincolor</uri>
     </include>
     <include>
-      <uri>model://roombaROS</uri>
+      <uri>model://tiago_description</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
     <model name="Table1_Chair1">
