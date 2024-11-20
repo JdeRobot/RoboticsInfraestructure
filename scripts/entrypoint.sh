@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usage="$(basename "$0") [-h] [--debug] [--logs] [--no-server] [--server]\n\n
+usage="$(basename "$0") [-h] [--debug] [--logs] [--no-server] [--server] [--bt-studio] \n\n
 
 optional arguments:\n
 \t  -h  show this help message and exit\n
@@ -8,7 +8,7 @@ optional arguments:\n
 \t  --logs record logs and run RADI\n
 \t  --no-server run RADI without webserver
 \t  --server run RADI with webserver
-\t  --bt run BT Studio"
+\t  --bt-studio run BT Studio"
 
 debug=false
 log=false
@@ -32,7 +32,7 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
   -s | --server )
     webserver=true
     ;;
-  --bt )
+  -bt | --bt-studio )
     btstudio=true
     webserver=false
     ;;
@@ -55,6 +55,8 @@ if [ $btstudio == true ]; then
 else
     runbt=""
 fi
+
+echo $btstudio
 
 runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
 root="cd /"
