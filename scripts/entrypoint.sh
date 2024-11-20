@@ -51,7 +51,7 @@ else
 fi
 
 if [ $btstudio == true ]; then
-    runbt="python3 /BtStudio/backend/manage.py runserver 0.0.0.0:7164"
+    runbt="python3 /BtStudio/manage.py runserver 0.0.0.0:7164"
 else
     runbt=""
 fi
