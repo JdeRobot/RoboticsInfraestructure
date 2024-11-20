@@ -28,9 +28,11 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
     ;;
   -ns | --no-server )
     webserver=false
+    btstudio=false
     ;;
   -s | --server )
     webserver=true
+    btstudio=false
     ;;
   -bt | --bt-studio )
     btstudio=true
@@ -51,12 +53,10 @@ else
 fi
 
 if [ $btstudio == true ]; then
-    runbt="python3 /BtStudio/manage.py runserver 0.0.0.0:7164"
+    runserver="python3 /BtStudio/manage.py runserver 0.0.0.0:7164"
 else
-    runbt=""
+    runserver=""
 fi
-
-echo $btstudio
 
 runram="python3 RoboticsApplicationManager/manager/manager/manager.py 0.0.0.0 7163"
 root="cd /"
@@ -65,7 +65,7 @@ root="cd /"
 if [ $log == true ]; then
     DATE_TIME=$(date +%F-%H-%M) # FORMAT year-month-date-hours-mins
     mkdir -p /root/.roboticsacademy/log/$DATE_TIME/
-    script -q -c "$root & $runserver & $runbt & $runram ;" /root/.roboticsacademy/log/$DATE_TIME/manager.log
+    script -q -c "$root & $runserver & $runram ;" /root/.roboticsacademy/log/$DATE_TIME/manager.log
     cp -r /root/.ros/log/* /root/.roboticsacademy/log/$DATE_TIME
 else
     if [ $debug == true ]; then
