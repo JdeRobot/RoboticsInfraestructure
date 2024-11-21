@@ -2,7 +2,9 @@
 as2_default_gazebo_sim.launch.py
 """
 import os
+
 from ament_index_python.packages import get_package_share_directory
+
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -16,17 +18,27 @@ def generate_launch_description():
 
     sim_config = os.path.join(get_package_share_directory('jderobot_drones'), 'sim_config/gzsim')
 
-    gazebo_assets = IncludeLaunchDescription(
+    # gazebo_assets = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource([os.path.join(
+    #         get_package_share_directory('as2_gazebo_assets'), 'launch'),
+    #         '/launch_simulation.py']),
+    #     launch_arguments={
+    #         'namespace': LaunchConfiguration('namespace'),
+    #         'use_sim_time': 'true',
+    #         'headless': 'true',
+    #         'verbose': 'true',
+    #         'run_on_start': 'true',
+    #         'simulation_config_file': LaunchConfiguration('world_file'),
+    #     }.items(),
+    # )
+    gzsim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('as2_gazebo_assets'), 'launch'),
-            '/launch_simulation.py']),
+            get_package_share_directory('jderobot_drones'), 'launch'),
+            '/gz_sim.launch.py']),
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
-            'use_sim_time': 'true',
-            'headless': 'true',
-            'verbose': 'true',
-            'run_on_start': 'true',
-            'simulation_config_file': LaunchConfiguration('world_file'),
+            'config_file': LaunchConfiguration('bridges_file'),
+            'world': LaunchConfiguration('world_file'),
         }.items(),
     )
     platform_gazebo = IncludeLaunchDescription(
@@ -36,7 +48,7 @@ def generate_launch_description():
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
             'use_sim_time': 'true',
-            'simulation_config_file': LaunchConfiguration('world_file'),
+            'create_bridges': 'false',
         }.items(),
     )
     state_estimator = IncludeLaunchDescription(
@@ -79,9 +91,12 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument('namespace', default_value='drone0',
                               description='Drone namespace.'),
-        DeclareLaunchArgument('world_file', default_value=sim_config + '/world.json',
-                              description='json world file'),
-        gazebo_assets,
+        DeclareLaunchArgument('world_file',
+                              description='Gazebo SDF world file'),
+        DeclareLaunchArgument('bridge_file',
+                              description='ROS-GZ bridge YAML file'),
+        # gazebo_assets,
+        gzsim,
         platform_gazebo,
         state_estimator,
         motion_controller,
