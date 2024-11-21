@@ -93,7 +93,7 @@ def generate_launch_description():
                               description='Drone namespace.'),
         DeclareLaunchArgument('world_file',
                               description='Gazebo SDF world file'),
-        DeclareLaunchArgument('bridge_file',
+        DeclareLaunchArgument('bridges_file',
                               description='ROS-GZ bridge YAML file'),
         # gazebo_assets,
         gzsim,
