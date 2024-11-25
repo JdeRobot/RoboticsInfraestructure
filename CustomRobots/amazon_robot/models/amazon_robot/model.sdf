@@ -539,6 +539,7 @@
             <publish_wheel_tf>false</publish_wheel_tf>
             <odometry_topic>odom</odometry_topic>
             <odometry_frame>odom</odometry_frame>
+            <odometryRate>20.0</odometryRate>
             <robot_base_frame>base_footprint</robot_base_frame>
         </plugin>
         <plugin name="amazon_robot_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
