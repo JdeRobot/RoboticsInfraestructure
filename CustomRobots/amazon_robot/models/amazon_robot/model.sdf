@@ -522,6 +522,7 @@
                  <namespace>/amazon_robot</namespace>
             </ros>
             <update_rate>30</update_rate>
+            <robotBaseFrame>base_link</robotBaseFrame>
             <!-- wheels -->
             <left_joint>wheel_left_joint</left_joint>
             <right_joint>wheel_right_joint</right_joint>
