@@ -179,23 +179,13 @@
                     <!-- This friction pamareter don't contain reliable data!! -->
                     <friction>
                         <ode>
-                            <mu>100000.0</mu>
-                            <mu2>100000.0</mu2>
+                            <mu>10</mu>
+                            <mu2>10</mu2>
                             <fdir1>0 0 0</fdir1>
-                            <slip1>0.0</slip1>
-                            <slip2>0.0</slip2>
+                            <slip1>0</slip1>
+                            <slip2>0</slip2>
                         </ode>
                     </friction>
-                    <contact>
-                        <ode>
-                            <soft_cfm>0</soft_cfm>
-                            <soft_erp>0.2</soft_erp>
-                            <kp>1e+5</kp>
-                            <kd>1</kd>
-                            <max_vel>0.01</max_vel>
-                            <min_depth>0.001</min_depth>
-                        </ode>
-                    </contact>
                 </surface>
             </collision>
             <visual name="wheel_left_visual">
@@ -233,23 +223,13 @@
                     <!-- This friction pamareter don't contain reliable data!! -->
                     <friction>
                         <ode>
-                            <mu>100000.0</mu>
-                            <mu2>100000.0</mu2>
+                            <mu>10</mu>
+                            <mu2>10</mu2>
                             <fdir1>0 0 0</fdir1>
-                            <slip1>0.0</slip1>
-                            <slip2>0.0</slip2>
+                            <slip1>0</slip1>
+                            <slip2>0</slip2>
                         </ode>
                     </friction>
-                    <contact>
-                        <ode>
-                            <soft_cfm>0</soft_cfm>
-                            <soft_erp>0.2</soft_erp>
-                            <kp>1e+5</kp>
-                            <kd>1</kd>
-                            <max_vel>0.01</max_vel>
-                            <min_depth>0.001</min_depth>
-                        </ode>
-                    </contact>
                 </surface>
             </collision>
             <visual name="wheel_right_visual">
