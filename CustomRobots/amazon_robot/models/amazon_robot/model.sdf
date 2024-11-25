@@ -517,7 +517,7 @@
             </physics>
             <!-- <axis><use_parent_model_frame>true</use_parent_model_frame><xyz>0 0 1</xyz></axis><limit effort="6" lower="0.00" upper="0.100" velocity="50"/> -->
         </joint>
-        <plugin name="amazon_robot_diff_drive" filename="libgazebo_ros_diff_drive.so">
+        <plugin name="amazon_robot_diff_drive" filename="libgazebo_ros_planar_move.so">
             <ros>
                  <namespace>/amazon_robot</namespace>
             </ros>
