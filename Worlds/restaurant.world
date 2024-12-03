@@ -1,0 +1,1273 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <gui fullscreen='1'>
+      <camera name='user_camera'>
+        <pose frame=''>0 3.5 19 0.00 1.57 -1.57</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <scene>
+      <grid>false</grid>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+    </scene>
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+      <name>sun_1</name>
+      <pose>0 0 1 0 0 0</pose>
+    </include>
+    <include>
+	    <uri>model://restaurant</uri>
+	    <pose>0 0 -0.2 0 0 0</pose>
+    </include>
+		<include>
+      <uri>model://ground_plane_sincolor</uri>
+    </include>
+    <include>
+      <uri>model://roombaROScam</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <model name="Table1_Chair1">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-2.8 -10.4 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table1_Chair2">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-2.8 -9.7 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table1_Chair3">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-1.6 -10.4 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name="Table1_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-1.6 -9.7 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name='Table1'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-2.15 -10 0 0 -0 1.60052</pose>
+      <static>0</static>
+    </model>
+    <model name="Table2_Chair1">
+      <include>
+        <uri>model://FemaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-0.8 -10.4 0 0 -0 1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-0.8 -10.4 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table2_Chair2">
+      <include>
+        <uri>model://FemaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-0.8 -9.7 0 0 -0 1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-0.8 -9.7 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table2_Chair3">
+      <include>
+        <uri>model://FemaleVisitorSit</uri>
+        <static>true</static>
+        <pose>0.4 -10.4 0 0 -0 -1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>0.4 -10.4 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name="Table2_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>0.4 -9.7 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name='Table2'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-0.15 -10 0 0 -0 1.60052</pose>
+      <static>0</static>
+    </model>
+    <model name="Table3_Chair1">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>1.2 -10.4 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table3_Chair2">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>1.2 -9.7 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table3_Chair3">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>2.4 -10.4 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name="Table3_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>2.4 -9.7 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name='Table3'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>1.85 -10 0 0 -0 1.60052</pose>
+      <static>0</static>
+    </model>
+    <model name="Table4_Chair1">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -9.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table4_Chair2">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -8 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name="Table4_Chair3">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -9.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table4_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -8 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name='Table4'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>3.4 -8.6 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name="Table5_Chair1">
+      <include>
+        <uri>model://MaleVisitorSit</uri>
+        <static>true</static>
+        <pose>3.1 -7.2 0 0 -0 -3.14</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -7.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table5_Chair2">
+      <include>
+        <uri>model://FemaleVisitorSit</uri>
+        <static>true</static>
+        <pose>3.1 -6 0 0 -0 0</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -6 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name="Table5_Chair3">
+      <include>
+        <uri>model://FemaleVisitorSit</uri>
+        <static>true</static>
+        <pose>3.8 -7.2 0 0 -0 -3.14</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -7.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table5_Chair4">
+      <include>
+        <uri>model://VisitorKidSit</uri>
+        <static>true</static>
+        <pose>3.8 -7.2 0 0 -0 -3.14</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -6 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name='Table5'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>3.4 -6.6 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name="Table6_Chair1">
+      <include>
+        <uri>model://MaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-2.8 -7.9 0 0 -0 1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-2.8 -7.9 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table6_Chair2">
+      <include>
+        <uri>model://MaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-2.8 -7.2 0 0 -0 1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-2.8 -7.2 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table6_Chair3">
+      <include>
+        <uri>model://MaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-1.6 -7.9 0 0 -0 -1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-1.6 -7.9 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name="Table6_Chair4">
+      <include>
+        <uri>model://MaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-1.6 -7.2 0 0 -0 -1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-1.6 -7.2 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name='Table6'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-2.15 -7.5 0 0 -0 1.60052</pose>
+      <static>0</static>
+    </model>
+    <model name="Table7_Chair1">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-0.8 -7.9 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table7_Chair2">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-0.8 -7.2 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table7_Chair3">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>0.4 -7.9 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name="Table7_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>0.4 -7.2 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name='Table7'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-0.15 -7.5 0 0 -0 1.60052</pose>
+      <static>0</static>
+    </model>
+    <model name="Table8_Chair1">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-2.8 -5.4 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table8_Chair2">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-2.8 -4.7 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table8_Chair3">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-1.6 -5.4 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name="Table8_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-1.6 -4.7 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name='Table8'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-2.15 -5 0 0 -0 1.60052</pose>
+      <static>0</static>
+    </model>
+    <model name="Table9_Chair1">
+      <include>
+        <uri>model://MaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-0.8 -5.4 0 0 -0 1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-0.8 -5.4 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table9_Chair2">
+      <include>
+        <uri>model://FemaleVisitorSit</uri>
+        <static>true</static>
+        <pose>-0.8 -4.7 0 0 -0 1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>-0.8 -4.7 0 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="Table9_Chair3">
+      <include>
+        <uri>model://VisitorKidSit</uri>
+        <static>true</static>
+        <pose>0.4 -5.4 0 0 -0 -1.60052</pose>
+      </include>
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>0.4 -5.4 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name="Table9_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>0.4 -4.7 0 0 -0 -3.14</pose>
+      </include>
+    </model>
+    <model name='Table9'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-0.15 -5 0 0 -0 1.60052</pose>
+      <static>0</static>
+    </model>
+    <model name="Table10_Chair1">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -5.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table10_Chair2">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -4 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name="Table10_Chair3">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -5.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table10_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -4 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name='Table10'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>3.4 -4.6 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name="Table11_Chair1">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -3.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table11_Chair2">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.1 -2 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name="Table11_Chair3">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -3.2 0 0 -0 1.60052</pose>
+      </include>
+    </model>
+    <model name="Table11_Chair4">
+      <include>
+        <uri>model://Chair</uri>
+        <static>true</static>
+        <pose>3.8 -2 0 0 -0 -1.60052</pose>
+      </include>
+    </model>
+    <model name='Table11'>
+      <static>true</static>
+      <link name='mesa_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='mesa_link_visual'>
+          <pose>0 0 0.615 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.4 0.55 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_1_link'>
+          <pose>0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_2_link'>
+          <pose>0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_3_link'>
+          <pose>-0.67 -0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='mesa_link_visual_pata_4_link'>
+          <pose>-0.67 0.245 0.3 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.6</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Wood</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>3.4 -2.6 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+  </world>
+</sdf>
