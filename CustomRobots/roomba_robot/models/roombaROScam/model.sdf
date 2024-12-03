@@ -410,7 +410,7 @@
       <kinematic>0</kinematic>
     </link>
     <link name='camera'>
-      <pose>0.139000 0.000000 1.0752000 0.000000 0.000000 0.000000</pose>
+      <pose>0.139000 0.000000 0.8752000 0.000000 0.000000 0.000000</pose>
       <gravity>0</gravity>
       <inertial>
         <mass>0.100000</mass>
@@ -440,9 +440,6 @@
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
           <alwaysOn>true</alwaysOn>
           <updateRate>0.0</updateRate>
-            <ros>
-            <remapping>~/out:=/roombaROS/camera</remapping>
-          </ros>
           <cameraName>roombaROS/camera</cameraName>
           <imageTopicName>image_raw</imageTopicName>
           <cameraInfoTopicName>camera_info</cameraInfoTopicName>
