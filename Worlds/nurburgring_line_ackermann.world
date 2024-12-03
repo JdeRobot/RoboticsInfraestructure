@@ -3,7 +3,7 @@
   <world name="default">
     <gui fullscreen='1'>
       <camera name='user_camera'>
-        <pose >-228.93 116.72 1.9 0 0.14 -0.39</pose>
+        <pose>-372.48 189.37 1.9 0 0.14 -0.39</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -28,7 +28,7 @@
     </include>
     <include>
       <uri>model://f1_renault_camera</uri>
-      <pose>-223.25 113.72 0 0 0 -2.115</pose>
+      <pose>-372.48 189.37 0.0269 0 0 -2.115</pose>
     </include>
   </world>
 </sdf>

@@ -3,8 +3,8 @@
 # Function to get the GPU device path based on vendor priority
 get_gpu_device() {
     preferred_vendor=$1
-    # Default vendor priority: NVIDIA > Intel
-    priority=(nvidia intel)
+    # Default vendor priority: NVIDIA > AMD > Intel
+    priority=(nvidia amd intel)
 
     # If a preferred vendor is provided, prioritize it
     if [ -n "$preferred_vendor" ]; then
@@ -12,7 +12,7 @@ get_gpu_device() {
     fi
 
     # Get GPU information
-    gpu_list=$(lspci -nn | grep VGA)
+    gpu_list=$(lspci -nn -D| grep -E "VGA|3D controller")
     echo "GPUs found:"
     echo "$gpu_list" | while IFS= read -r line; do
         echo -e "\t$line"
@@ -31,7 +31,7 @@ get_gpu_device() {
         gpu_info=$(echo "$gpu_list" | grep -i "$vendor" | head -n 1)
         if [ -n "$gpu_info" ]; then
             bus=$(echo "$gpu_info" | cut -d' ' -f1)
-            device=$(ls /sys/bus/pci/devices/0000:$bus/drm | grep card)
+            device=$(ls /sys/bus/pci/devices/$bus/drm | grep card)
 
             # Check if corresponding dri path exists
             device_path="/dev/dri/$device"
