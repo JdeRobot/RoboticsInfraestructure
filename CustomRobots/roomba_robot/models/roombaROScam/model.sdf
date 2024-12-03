@@ -423,7 +423,7 @@
           <izz>1.000000</izz>
         </inertia>
       </inertial>
-      <sensor name='cam' type='camera'>
+      <sensor name='camera' type='camera'>
         <update_rate>20.000000</update_rate>
         <camera name='cleft'>
           <horizontal_fov>1.570000</horizontal_fov>
@@ -440,10 +440,13 @@
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
           <alwaysOn>true</alwaysOn>
           <updateRate>0.0</updateRate>
+            <ros>
+            <remapping>~/out:=/roombaROS/camera</remapping>
+          </ros>
           <cameraName>roombaROS/camera</cameraName>
           <imageTopicName>image_raw</imageTopicName>
           <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-          <frameName>camera_top_body</frameName>
+          <frameName>camera</frameName>
           <hackBaseline>0.07</hackBaseline>
           <distortionK1>0.0</distortionK1>
           <distortionK2>0.0</distortionK2>
