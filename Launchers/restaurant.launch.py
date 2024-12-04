@@ -69,12 +69,13 @@ def generate_launch_description():
 
     declare_slam_cmd = DeclareLaunchArgument("slam", default_value="True")
 
-    # declare_map_cmd = DeclareLaunchArgument(
-    #     'map', default_value=os.path.join(
-    #         package_dir,
-    #         'maps',
-    #         'aws_house.yaml')
-    # )
+    declare_map_cmd = DeclareLaunchArgument(
+        'map', default_value=os.path.join(
+            gazebo_models_path,
+            'restaurant',
+            'maps',
+            'restaurant.yaml')
+    )
 
     declare_nav_params_cmd = DeclareLaunchArgument(
         'params_file', default_value=os.path.join(
@@ -108,6 +109,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'use_sim_time': use_sim_time,
+            'map': map_file,
             'slam': slam,
             'params_file': params_file
         }.items()
@@ -132,7 +134,7 @@ def generate_launch_description():
     ld.add_action(declare_use_simulator_cmd)
     ld.add_action(declare_world_cmd)
     ld.add_action(declare_slam_cmd)
-    # ld.add_action(declare_map_cmd)
+    ld.add_action(declare_map_cmd)
     ld.add_action(declare_nav_params_cmd)
 
     # Add any actions
