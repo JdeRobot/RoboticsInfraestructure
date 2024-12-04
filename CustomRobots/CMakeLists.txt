@@ -141,8 +141,6 @@ install(DIRECTORY
   3d_reconstruction/worlds
 
   restaurant/models
-  restaurant/maps
-  restaurant/params
 
   DESTINATION share/${PROJECT_NAME}
 )
