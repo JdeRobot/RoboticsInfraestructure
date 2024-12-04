@@ -145,6 +145,8 @@ install(DIRECTORY
   turtlebot3/models
   turtlebot3/urdf 
   turtlebot3/params
+  
+  restaurant/models
 
   DESTINATION share/${PROJECT_NAME}
 )
