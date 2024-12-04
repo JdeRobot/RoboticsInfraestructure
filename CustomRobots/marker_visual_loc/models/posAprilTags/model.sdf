@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="posAprilTags">
+
+    <!-- fridge -->
+    <model name="tag_0">
+      <pose>1.75 -3.535 7.3 1.57079 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00000.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- back glass door -->
+    <model name="tag_1">
+      <pose>2.2 2.835 7.3 1.57079 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00001.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- window -->
+    <model name="tag_2">
+      <pose>5.935 -2.89 7.3 0 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00002.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- kitchen -->
+    <model name="tag_3">
+      <pose>3.17 -6.14 7.3 1.57079 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00003.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- back door -->
+    <model name="tag_4">
+      <pose>-2.18 1.5 7.3 0 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00004.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- piano -->
+    <model name="tag_5">
+      <pose>4.59 -1 7.3 0 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00005.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- front door -->
+    <model name="tag_6">
+      <pose>-0.8 -2.85 7.3 1.57079 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00006.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="tag_7">
+      <pose>1.98 -5.23 7.3 0 1.57079 0</pose>
+      <static>true</static>
+      <link name="link">      
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.4 0.4 0.4 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/tag36_11_00007.png</albedo_map>
+                <double_sided>true</double_sided>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+  </model>
+</sdf>
