@@ -147,12 +147,7 @@ install(DIRECTORY
   turtlebot3/params
   
   restaurant/models
-  
-  # MARKER VISUAL LOC
-  marker_visual_loc/models
-  turtlebot3/models
-  turtlebot3/urdf 
-  turtlebot3/params
+ 
 
   DESTINATION share/${PROJECT_NAME}
 )

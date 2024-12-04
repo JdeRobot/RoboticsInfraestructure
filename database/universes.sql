@@ -83,6 +83,7 @@ COPY public.universes (id, name, launch_file_path, ros_version, visualization, w
 25 	Simple Ackermann Circuit	/opt/jderobot/Launchers/simple_circuit_ackermann.launch.py	ROS2	gazebo_rae	gazebo
 26	Autoparking Lidar Simple: In line	/opt/jderobot/Launchers/prius_360_autoparking.launch.py	ROS2	gazebo_rae	gazebo
 27	Vacuums House Roof	/opt/jderobot/Launchers/montecarlo_visual_loc.launch.py	ROS2	gazebo_rae	gazebo
+28	Restaurant	/opt/jderobot/Launchers/restaurant.launch.py	ROS2	gazebo_rae	gazebo
 29	Vacuums House Markers	/opt/jderobot/Launchers/marker_visual_loc.launch.py	ROS2	gzsim_rae	gazebo
 \.
 
