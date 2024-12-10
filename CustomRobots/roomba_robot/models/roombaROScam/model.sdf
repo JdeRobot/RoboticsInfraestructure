@@ -504,11 +504,13 @@
       <torque>20</torque>
       <commandTopic>/cmd_vel</commandTopic>
       <!-- topic name published in the cpp file -->
-      <odom_topic>odom</odom_topic>
-      <frame_id>odom</frame_id>
-      <tf_topic>/tf</tf_topic>
-      <odom_publisher_frequency>30</odom_publisher_frequency>
-      <child_frame_id>base_footprint</child_frame_id>
+
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
 
       <publishWheelTF>true</publishWheelTF>
       <publishWheelJointState>true</publishWheelJointState>
