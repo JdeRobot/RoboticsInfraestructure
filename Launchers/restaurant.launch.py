@@ -4,6 +4,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration, PythonExpression
+import launch_ros
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
@@ -27,13 +28,13 @@ def generate_launch_description():
     worlds_dir = "/opt/jderobot/Worlds"
     world_path = os.path.join(worlds_dir, world_file_name)
 
-    nav2_launch_dir = os.path.join("/opt/jderobot/Launchers", "restaurant_nav2.launch.py")
-
     # Set the path to the SDF model files.
     gazebo_models_path = os.path.join(pkg_share, "models")
     os.environ["GAZEBO_MODEL_PATH"] = (
         f"{os.environ.get('GAZEBO_MODEL_PATH', '')}:{':'.join(gazebo_models_path)}"
     )
+
+    vacuum_path = os.path.join(gazebo_models_path, "roombaROScam/model.sdf")
 
     ########### YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ##############
     # Launch configuration variables specific to simulation
@@ -41,6 +42,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     use_simulator = LaunchConfiguration("use_simulator")
     world = LaunchConfiguration("world")
+    gui = LaunchConfiguration("gui")
     slam = LaunchConfiguration("slam")
     map_file = LaunchConfiguration("map")
     params_file = LaunchConfiguration("params_file")
@@ -69,6 +71,9 @@ def generate_launch_description():
         description="Full path to the world model file to load",
     )
 
+    declare_gui_cmd = DeclareLaunchArgument(name='gui', default_value='True',
+                      description='Flag to enable joint_state_publisher_gui')
+
     declare_slam_cmd = DeclareLaunchArgument("slam", default_value="True")
 
     declare_map_cmd = DeclareLaunchArgument(
@@ -89,6 +94,13 @@ def generate_launch_description():
 
     # Specify the actions
 
+    joint_state_publisher_node = launch_ros.actions.Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher',
+        arguments=[vacuum_path],
+    )
+
     # Start Yolo v4
     start_yolo_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -105,10 +117,26 @@ def generate_launch_description():
         launch_arguments={"world": world}.items(),
     )
 
-    nav2_launch = IncludeLaunchDescription(
+    localization_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            nav2_launch_dir
-        )
+            os.path.join(pkg_nav2_ros, 'launch', 'localization_launch.py')
+        ),
+        launch_arguments={
+            'use_sim_time': use_sim_time,
+            'map': map_file,
+            'slam': slam,
+            'params_file': params_file
+        }.items()
+    )
+
+    navigation_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_nav2_ros, 'launch', 'navigation_launch.py')
+        ),
+        launch_arguments={
+            'use_sim_time': use_sim_time,
+            'params_file': params_file
+        }.items()
     )
 
     # Create the launch description and populate
@@ -119,13 +147,16 @@ def generate_launch_description():
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_use_simulator_cmd)
     ld.add_action(declare_world_cmd)
+    ld.add_action(declare_gui_cmd)
     ld.add_action(declare_slam_cmd)
     ld.add_action(declare_map_cmd)
     ld.add_action(declare_nav_params_cmd)
 
     # Add any actions
+    ld.add_action(joint_state_publisher_node)
     ld.add_action(start_gazebo_server_cmd)
     ld.add_action(start_yolo_cmd)
-    ld.add_action(nav2_launch)
+    ld.add_action(localization_cmd)
+    ld.add_action(navigation_cmd)
 
     return ld

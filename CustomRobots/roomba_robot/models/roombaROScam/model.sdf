@@ -504,14 +504,11 @@
       <torque>20</torque>
       <commandTopic>/cmd_vel</commandTopic>
       <!-- topic name published in the cpp file -->
-      <odom_publisher_frequency>30</odom_publisher_frequency>
+      <odometryTopic>roombaROS/odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
 
-      <publish_odom>true</publish_odom>
-      <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>true</publish_wheel_tf>
-      <odometry_topic>tf</odometry_topic>
-      <odometry_frame>odom</odometry_frame>
-      <robot_base_frame>base_link</robot_base_frame>
+      <robotBaseFrame>base_link</robotBaseFrame>
 
       <publishWheelTF>true</publishWheelTF>
       <publishWheelJointState>true</publishWheelJointState>
