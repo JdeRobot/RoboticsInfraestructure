@@ -6,7 +6,7 @@ amcl:
     alpha3: 0.2
     alpha4: 0.2
     alpha5: 0.2
-    base_frame_id: "base_link"
+    base_frame_id: "base_footprint"
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
     beam_skip_threshold: 0.3
@@ -60,7 +60,7 @@ bt_navigator:
     use_sim_time: True
     global_frame: map
     robot_base_frame: base_link
-    odom_topic: odom
+    odom_topic: /odom
     bt_loop_duration: 10
     default_server_timeout: 20
     # 'default_nav_through_poses_bt_xml' and 'default_nav_to_pose_bt_xml' are use defaults:
@@ -359,7 +359,7 @@ velocity_smoother:
     min_velocity: [-0.26, 0.0, -1.0]
     max_accel: [2.5, 0.0, 3.2]
     max_decel: [-2.5, 0.0, -3.2]
-    odom_topic: "roombaROS/odom"
+    odom_topic: "odom"
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
     velocity_timeout: 1.0
