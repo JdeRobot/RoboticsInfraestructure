@@ -504,6 +504,7 @@
       <torque>20</torque>
       <commandTopic>/cmd_vel</commandTopic>
       <!-- topic name published in the cpp file -->
+      <odom_publisher_frequency>30</odom_publisher_frequency>
 
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
