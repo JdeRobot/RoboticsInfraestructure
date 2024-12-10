@@ -132,9 +132,9 @@ def generate_launch_description():
     ld.add_action(declare_simulator_cmd)
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_use_simulator_cmd)
+    ld.add_action(declare_world_cmd)
     ld.add_action(start_gazebo_server_cmd)
     
-    ld.add_action(declare_world_cmd)
     ld.add_action(declare_slam_cmd)
     ld.add_action(declare_map_cmd)
     ld.add_action(declare_nav_params_cmd)
