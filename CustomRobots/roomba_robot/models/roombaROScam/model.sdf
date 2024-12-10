@@ -494,7 +494,7 @@
       <torque>20</torque>
       <commandTopic>/cmd_vel</commandTopic>
       <!-- topic name published in the cpp file -->
-      <odometryTopic>roombaROS/odom</odometryTopic>
+      <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <odometryRate>20.0</odometryRate>
 
