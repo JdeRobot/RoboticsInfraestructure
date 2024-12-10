@@ -27,6 +27,8 @@ def generate_launch_description():
     worlds_dir = "/opt/jderobot/Worlds"
     world_path = os.path.join(worlds_dir, world_file_name)
 
+    nav2_launch_dir = os.path.join("/opt/jderobot/Launchers", "restaurant_nav2.launch.py")
+
     # Set the path to the SDF model files.
     gazebo_models_path = os.path.join(pkg_share, "models")
     os.environ["GAZEBO_MODEL_PATH"] = (
@@ -103,26 +105,10 @@ def generate_launch_description():
         launch_arguments={"world": world}.items(),
     )
 
-    localization_cmd = IncludeLaunchDescription(
+    nav2_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_nav2_ros, 'launch', 'localization_launch.py')
-        ),
-        launch_arguments={
-            'use_sim_time': use_sim_time,
-            'map': map_file,
-            'slam': slam,
-            'params_file': params_file
-        }.items()
-    )
-
-    navigation_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_nav2_ros, 'launch', 'navigation_launch.py')
-        ),
-        launch_arguments={
-            'use_sim_time': use_sim_time,
-            'params_file': params_file
-        }.items()
+            nav2_launch_dir
+        )
     )
 
     # Create the launch description and populate
@@ -133,15 +119,13 @@ def generate_launch_description():
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_use_simulator_cmd)
     ld.add_action(declare_world_cmd)
-    ld.add_action(start_gazebo_server_cmd)
-    
     ld.add_action(declare_slam_cmd)
     ld.add_action(declare_map_cmd)
     ld.add_action(declare_nav_params_cmd)
 
     # Add any actions
+    ld.add_action(start_gazebo_server_cmd)
     ld.add_action(start_yolo_cmd)
-    ld.add_action(localization_cmd)
-    ld.add_action(navigation_cmd)
+    ld.add_action(nav2_launch)
 
     return ld
