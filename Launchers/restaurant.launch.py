@@ -4,8 +4,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration, PythonExpression
-import launch_ros
-from launch_ros.actions import Node
+from launch_ros.actions import SetRemap
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -34,15 +33,12 @@ def generate_launch_description():
         f"{os.environ.get('GAZEBO_MODEL_PATH', '')}:{':'.join(gazebo_models_path)}"
     )
 
-    vacuum_path = os.path.join(gazebo_models_path, "roombaROScam/model.sdf")
-
     ########### YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ##############
     # Launch configuration variables specific to simulation
     headless = LaunchConfiguration("headless")
     use_sim_time = LaunchConfiguration("use_sim_time")
     use_simulator = LaunchConfiguration("use_simulator")
     world = LaunchConfiguration("world")
-    gui = LaunchConfiguration("gui")
     slam = LaunchConfiguration("slam")
     map_file = LaunchConfiguration("map")
     params_file = LaunchConfiguration("params_file")
@@ -71,9 +67,6 @@ def generate_launch_description():
         description="Full path to the world model file to load",
     )
 
-    declare_gui_cmd = DeclareLaunchArgument(name='gui', default_value='True',
-                      description='Flag to enable joint_state_publisher_gui')
-
     declare_slam_cmd = DeclareLaunchArgument("slam", default_value="True")
 
     declare_map_cmd = DeclareLaunchArgument(
@@ -93,13 +86,6 @@ def generate_launch_description():
     )
 
     # Specify the actions
-
-    joint_state_publisher_node = launch_ros.actions.Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        arguments=[vacuum_path],
-    )
 
     # Start Yolo v4
     start_yolo_cmd = IncludeLaunchDescription(
@@ -147,16 +133,18 @@ def generate_launch_description():
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_use_simulator_cmd)
     ld.add_action(declare_world_cmd)
-    ld.add_action(declare_gui_cmd)
     ld.add_action(declare_slam_cmd)
     ld.add_action(declare_map_cmd)
     ld.add_action(declare_nav_params_cmd)
 
     # Add any actions
-    ld.add_action(joint_state_publisher_node)
     ld.add_action(start_gazebo_server_cmd)
     ld.add_action(start_yolo_cmd)
     ld.add_action(localization_cmd)
     ld.add_action(navigation_cmd)
+
+    # Remap nav2
+    cmd_vel_remap = SetRemap(src='cmd_vel_nav', dst='cmd_vel')
+    ld.add_action(cmd_vel_remap)
 
     return ld
