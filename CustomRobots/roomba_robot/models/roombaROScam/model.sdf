@@ -506,7 +506,7 @@
       <!-- topic name published in the cpp file -->
 
       <publish_odom>true</publish_odom>
-      <publish_odom_tf>false</publish_odom_tf>
+      <publish_odom_tf>true</publish_odom_tf>
       <publish_wheel_tf>true</publish_wheel_tf>
       <odometry_topic>tf</odometry_topic>
       <odometry_frame>odom</odometry_frame>
