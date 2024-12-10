@@ -7,7 +7,11 @@
       </ros>
       <update_rate>1.0</update_rate>
     </plugin>
-    <link name="base">
+    <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+
+    <link name="base_footprint"/>
+
+    <link name="base_link">
       <inertial>
         <pose>0.001453 -0.000453 0.029787 0 0 0</pose>
         <inertia>
@@ -454,8 +458,14 @@
       </sensor>
     </link>
 
+    <joint name="base_joint" type="fixed">
+      <parent>base_footprint</parent>
+      <child>base_link</child>
+      <pose>0.0 0.0 0.010 0 0 0</pose>
+    </joint>
+
     <joint name="left_wheel_joint" type="revolute">
-      <parent>base</parent>
+      <parent>base_link</parent>
       <child>left_wheel</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -463,7 +473,7 @@
       </axis>
     </joint>
     <joint name="right_wheel_joint" type="revolute">
-      <parent>base</parent>
+      <parent>base_link</parent>
       <child>right_wheel</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -471,7 +481,7 @@
       </axis>
     </joint>
     <joint name='joint_laser' type='fixed'>
-      <parent>base</parent>
+      <parent>base_link</parent>
       <child>laser</child>
       <axis>
         <xyz>0.000000 0.000000 0.000000</xyz>
@@ -494,11 +504,11 @@
       <torque>20</torque>
       <commandTopic>/cmd_vel</commandTopic>
       <!-- topic name published in the cpp file -->
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <odometryRate>20.0</odometryRate>
-
-      <robotBaseFrame>base</robotBaseFrame>
+      <odom_topic>odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <tf_topic>/tf</tf_topic>
+      <odom_publisher_frequency>30</odom_publisher_frequency>
+      <child_frame_id>base_footprint</child_frame_id>
 
       <publishWheelTF>true</publishWheelTF>
       <publishWheelJointState>true</publishWheelJointState>
