@@ -140,7 +140,14 @@ install(DIRECTORY
   3d_reconstruction/models
   3d_reconstruction/worlds
 
+  # MARKER VISUAL LOC
+  marker_visual_loc/models
+  turtlebot3/models
+  turtlebot3/urdf 
+  turtlebot3/params
+  
   restaurant/models
+ 
 
   DESTINATION share/${PROJECT_NAME}
 )
