@@ -16,38 +16,16 @@ def generate_launch_description():
     Launch aerostack2 nodes
     """
 
-    sim_config = os.path.join(get_package_share_directory('jderobot_drones'), 'sim_config/gzsim')
+    as2_sim_config = os.path.join(get_package_share_directory(
+        'jderobot_drones'), 'sim_config/gzsim/as2_config.yaml')
 
-    # gazebo_assets = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([os.path.join(
-    #         get_package_share_directory('as2_gazebo_assets'), 'launch'),
-    #         '/launch_simulation.py']),
-    #     launch_arguments={
-    #         'namespace': LaunchConfiguration('namespace'),
-    #         'use_sim_time': 'true',
-    #         'headless': 'true',
-    #         'verbose': 'true',
-    #         'run_on_start': 'true',
-    #         'simulation_config_file': LaunchConfiguration('world_file'),
-    #     }.items(),
-    # )
-    gzsim = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('jderobot_drones'), 'launch'),
-            '/gz_sim.launch.py']),
-        launch_arguments={
-            'namespace': LaunchConfiguration('namespace'),
-            'config_file': LaunchConfiguration('bridges_file'),
-            'world': LaunchConfiguration('world_file'),
-        }.items(),
-    )
     platform_gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('as2_platform_gazebo'), 'launch'),
             '/platform_gazebo_launch.py']),
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
-            'use_sim_time': 'true',
+            'platform_config_file': as2_sim_config,
             'create_bridges': 'false',
         }.items(),
     )
@@ -57,9 +35,7 @@ def generate_launch_description():
             '/state_estimator_launch.py']),
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
-            'use_sim_time': 'true',
-            'plugin_name': 'ground_truth',
-            'plugin_config_file': sim_config + '/state_estimator_config_file.yaml'
+            'config_file': as2_sim_config
         }.items(),
     )
     motion_controller = IncludeLaunchDescription(
@@ -68,10 +44,7 @@ def generate_launch_description():
             '/controller_launch.py']),
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
-            'use_sim_time': 'true',
-            'motion_controller_config_file': sim_config + '/motion_controller.yaml',
-            'plugin_name': 'pid_speed_controller',
-            'plugin_config_file': sim_config + '/motion_controller_plugin.yaml'
+            'config_file': as2_sim_config
         }.items(),
     )
     behaviors = IncludeLaunchDescription(
@@ -80,23 +53,13 @@ def generate_launch_description():
             '/motion_behaviors_launch.py']),
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
-            'use_sim_time': 'true',
-            'takeoff_plugin_name': 'takeoff_plugin_position',
-            'go_to_plugin_name': 'go_to_plugin_position',
-            'follow_path_plugin_name': 'follow_path_plugin_position',
-            'land_plugin_name': 'land_plugin_speed'
+            'config_file': as2_sim_config
         }.items(),
     )
 
     return LaunchDescription([
         DeclareLaunchArgument('namespace', default_value='drone0',
                               description='Drone namespace.'),
-        DeclareLaunchArgument('world_file',
-                              description='Gazebo SDF world file'),
-        DeclareLaunchArgument('bridges_file',
-                              description='ROS-GZ bridge YAML file'),
-        # gazebo_assets,
-        gzsim,
         platform_gazebo,
         state_estimator,
         motion_controller,
