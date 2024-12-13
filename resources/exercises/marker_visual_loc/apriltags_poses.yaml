@@ -1,19 +1,19 @@
 # Coords must be transformed, origin (1,-1.5,0)
 tags:
   tag_0:
-    position: [0.75, -2.035, 0]
+    position: [1.75, -3.535, 0]
   tag_1:
-    position: [1.2, 4.335, 0]
+    position: [2.2, 2.835, 0]
   tag_2:
-    position: [4.935, -1.39, 0]
+    position: [5.935, -2.89, 0]
   tag_3:
-    position: [2.17, -4.64, 0]
+    position: [3.17, -6.14, 0]
   tag_4:
-    position: [-3.18, 3.0, 0]
+    position: [-2.18, 1.5, 0]
   tag_5:
-    position: [3.59, 0.5, 0]
+    position: [4.59, -1, 0]
   tag_6:
-    position: [-1.8, -1.35, 0]
+    position: [-0.8, -2.85, 0]
   tag_7:
-    position: [0.98, -3.73, 0]
+    position: [1.98, -5.23, 0]
 
