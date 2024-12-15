@@ -3,8 +3,8 @@
 # Function to get the GPU device path based on vendor priority
 get_gpu_device() {
     preferred_vendor=$1
-    # Default vendor priority: NVIDIA > AMD > Intel
-    priority=(nvidia amd intel)
+    # Default vendor priority: NVIDIA > AMD > Intel > Microsoft (NVIDIA in disguise on WSL)
+    priority=(nvidia amd intel microsoft)
 
     # If a preferred vendor is provided, prioritize it
     if [ -n "$preferred_vendor" ]; then
@@ -22,7 +22,7 @@ get_gpu_device() {
         if [[ "$vendor" == "nvidia" ]]; then
             # Check if nvidia-smi works
             if ! command -v nvidia-smi &> /dev/null || ! nvidia-smi &> /dev/null; then
-                echo "Warning: nvidia-smi not available or failed, skipping NVIDIA GPU." >&2
+                echo "WARNING: nvidia-smi not available or failed, skipping NVIDIA GPU." >&2
                 continue
             fi
         fi
@@ -30,6 +30,39 @@ get_gpu_device() {
         # Search for the vendor in the GPU list from lspci
         gpu_info=$(echo "$gpu_list" | grep -i "$vendor" | head -n 1)
         if [ -n "$gpu_info" ]; then
+
+            # Special scenario: Microsoft vendor GPUs in WSL
+            if [[ "$vendor" == "microsoft" ]]; then
+
+                # Find valid GPU device paths
+                files=()
+                for file in /dev/dri/card*; do
+                    if [ -e "$file" ]; then
+                        files+=("$file")
+                    fi
+                done
+
+                # Check if we found any GPU device paths
+                if [ ${#files[@]} -eq 0 ]; then
+                    echo "WARNING: 'Microsoft' vendor found, but no GPU in /dev/dri directory." >&2
+                    continue
+                fi
+
+                # Keep the first GPU device path
+                device_path="${files[0]}"
+                echo "INFO: GPU candidates found at ${files[*]} (keeping $device_path)." >&2
+
+                # Check if 'nvidia-smi' is available
+                if command -v nvidia-smi &> /dev/null || nvidia-smi &> /dev/null; then
+                    echo "INFO: 'nvidia-smi' available. Most likely an NVIDIA GPU in WSL." >&2
+                else
+                    echo "INFO: 'nvidia-smi' not available. Most likely an Intel/AMD GPU in WSL." >&2
+                fi
+
+                return 0
+            fi
+
+            # Get the device ID (card0, card1, etc.)
             bus=$(echo "$gpu_info" | cut -d' ' -f1)
             device=$(ls /sys/bus/pci/devices/$bus/drm | grep card)
 
