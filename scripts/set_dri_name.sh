@@ -33,7 +33,6 @@ get_gpu_device() {
 
             # Special scenario: Microsoft vendor GPUs in WSL
             if [[ "$vendor" == "microsoft" ]]; then
-
                 # Find valid GPU device paths
                 files=()
                 for file in /dev/dri/card*; do
@@ -58,21 +57,19 @@ get_gpu_device() {
                 else
                     echo "INFO: 'nvidia-smi' not available. Most likely an Intel/AMD GPU in WSL." >&2
                 fi
-
-                return 0
+                device=$(basename "$device_path")
+            else
+                # Get the device ID (card0, card1, etc.)
+                bus=$(echo "$gpu_info" | cut -d' ' -f1)
+                device=$(ls /sys/bus/pci/devices/$bus/drm | grep card)
+    
+                # Check if corresponding dri path exists
+                device_path="/dev/dri/$device"
+                if [ ! -e $device_path ]; then
+                    echo "Warning: Skipping $device_path does not exist."
+                    continue
+                fi
             fi
-
-            # Get the device ID (card0, card1, etc.)
-            bus=$(echo "$gpu_info" | cut -d' ' -f1)
-            device=$(ls /sys/bus/pci/devices/$bus/drm | grep card)
-
-            # Check if corresponding dri path exists
-            device_path="/dev/dri/$device"
-            if [ ! -e $device_path ]; then
-                echo "Warning: Skipping $device_path does not exist."
-                continue
-            fi
-
             if [ -n "$device" ]; then
                 # Set the DRI_NAME environment variable to the card name (e.g., card0, card1)
                 export DRI_NAME="$device"
