@@ -34,8 +34,8 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('use_simulator')),
         launch_arguments={
             'namespace': 'drone0',
-            'config_file': bridges_path,
-            'world': world_path,
+            'bridges_file': bridges_path,
+            'world_file': world_path,
         }.items(),
     )
 
@@ -45,8 +45,6 @@ def generate_launch_description():
             '/as2_default_gazebo_sim.launch.py']),
         launch_arguments={
             'namespace': 'drone0',
-            'bridges_file': bridges_path,
-            'world_file': world_path,
         }.items(),
     )
 
