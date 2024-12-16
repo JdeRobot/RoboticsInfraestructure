@@ -361,7 +361,7 @@
 
     <link name="camera_rgb_frame">
       <inertial>
-        <pose>0.069 -0.047 0.107 0 -0.35 0</pose>
+        <pose>0.069 -0.047 0.107 0 0 0</pose>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.000</ixy>
@@ -373,7 +373,7 @@
         <mass>0.035</mass>
       </inertial>
 
-      <pose>0.069 -0.047 0.107 0 -0.35 0</pose>
+      <pose>0.069 -0.047 0.107 0 0 0</pose>
       <sensor name="camera" type="camera">
         <always_on>true</always_on>
         <visualize>true</visualize>
