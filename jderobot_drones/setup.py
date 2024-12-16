@@ -12,7 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
         (os.path.join('share', package_name, 'sim_config/px4_classic'), glob('sim_config/px4_classic/*')),
         (os.path.join('share', package_name, 'sim_config/gzsim'), glob('sim_config/gzsim/*'))
     ],
