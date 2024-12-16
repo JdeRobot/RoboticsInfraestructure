@@ -203,7 +203,7 @@
 
     <!-- Robot -->
     <include>
-      <pose>1 -1.5 7.1 0 0 0</pose>
+      <pose>1 -1.5 0.6 0 0 0</pose>
       <name>turtlebot3_waffle</name>
       <uri>model://turtlebot3_waffle</uri>
     </include>
