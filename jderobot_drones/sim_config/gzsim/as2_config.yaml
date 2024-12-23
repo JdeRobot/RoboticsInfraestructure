@@ -9,11 +9,11 @@
       enable_land_platform: false  # Enable land platform, only for debugging purposes
   state_estimator:
     ros__parameters:
-      plugin_name: ground_truth
+      # plugin_name: ground_truth
       use_gazebo_tf: True
   controller_manager:
     ros__parameters:
-      plugin_name: pid_speed_controller
+      # plugin_name: pid_speed_controller
       cmd_freq: 30.0  # Hz of platform commands send
       info_freq: 10.0  # Hz of platform info publish
       odom_frame_id: "odom"

@@ -32,7 +32,7 @@ def generate_launch_description():
     state_estimator = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('as2_state_estimator'), 'launch'),
-            '/state_estimator_launch.py']),
+            '/ground_truth-state_estimator.launch.py']),
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
             'config_file': as2_sim_config
@@ -41,7 +41,7 @@ def generate_launch_description():
     motion_controller = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('as2_motion_controller'), 'launch'),
-            '/controller_launch.py']),
+            '/pid_speed_controller-motion_controller.launch.py']),
         launch_arguments={
             'namespace': LaunchConfiguration('namespace'),
             'config_file': as2_sim_config
