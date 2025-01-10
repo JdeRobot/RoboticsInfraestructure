@@ -85,7 +85,7 @@ COPY public.universes (id, name, launch_file_path, ros_version, visualization, w
 27	Vacuums House Roof	/opt/jderobot/Launchers/montecarlo_visual_loc.launch.py	ROS2	gazebo_rae	gazebo
 28	Restaurant	/opt/jderobot/Launchers/restaurant.launch.py	ROS2	gazebo_rae	gazebo
 29	Vacuums House Markers	/opt/jderobot/Launchers/marker_visual_loc.launch.py	ROS2	gzsim_rae	gazebo
-30	Rescue Peopple Harmonic	/opt/jderobot/Launchers/rescue_people.launch.py	ROS2	gzsim_rae	gzsimdrones
+30	Rescue Peopple Harmonic	/opt/jderobot/Launchers/rescue_people.launch.py	ROS2	gzsim_rae	gazebo
 \.
 
 
