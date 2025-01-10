@@ -172,22 +172,96 @@
         </plugin>
 
         <!-- Payload: Frontal and Ventral Cameras -->
-        <include>
-            <name>frontal_cam</name>
-            <uri>model://hd_camera</uri>
+        <link name="frontal_cam">
+            <inertial>
+                <pose>0 0 0.05 0 0 0</pose>
+                <inertia>
+                <ixx>0.001</ixx>
+                <ixy>0.000</ixy>
+                <ixz>0.000</ixz>
+                <iyy>0.001</iyy>
+                <iyz>0.000</iyz>
+                <izz>0.001</izz>
+                </inertia>
+                <mass>0.035</mass>
+            </inertial>
+
             <pose>0 0 0.05 0 0 0</pose>
-        </include>
+            <sensor name="camera" type="camera">
+                <always_on>true</always_on>
+                <visualize>true</visualize>
+                <update_rate>30</update_rate>
+                <topic>drone0/frontal_cam/image_raw</topic>
+                <gz_frame_id>camera_rgb_frame</gz_frame_id>
+                <camera name="intel_realsense_r200">
+                <camera_info_topic>drone0/frontal_cam/camera_info</camera_info_topic>
+                <horizontal_fov>1.02974</horizontal_fov>
+                <image>
+                    <width>1920</width>
+                    <height>1080</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+                </camera> 
+            </sensor>
+        </link>
+
+        <link name="ventral_cam">
+            <inertial>
+                <pose>0 0 0.05 0 0 0</pose>
+                <inertia>
+                <ixx>0.001</ixx>
+                <ixy>0.000</ixy>
+                <ixz>0.000</ixz>
+                <iyy>0.001</iyy>
+                <iyz>0.000</iyz>
+                <izz>0.001</izz>
+                </inertia>
+                <mass>0.035</mass>
+            </inertial>
+
+            <pose>0 0 0.05 0 0 0</pose>
+            <sensor name="camera" type="camera">
+                <always_on>true</always_on>
+                <visualize>true</visualize>
+                <update_rate>30</update_rate>
+                <topic>drone0/ventral_cam/image_raw</topic>
+                <gz_frame_id>camera_rgb_frame</gz_frame_id>
+                <camera name="intel_realsense_r200">
+                <camera_info_topic>drone0/ventral_cam/camera_info</camera_info_topic>
+                <horizontal_fov>1.02974</horizontal_fov>
+                <image>
+                    <width>1920</width>
+                    <height>1080</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+                </camera> 
+            </sensor>
+        </link>
+
         <joint
             name="frontal_cam_joint" type="fixed">
             <parent>base_link</parent>
             <child>frontal_cam</child>
         </joint>
 
-        <include>
-            <name>ventral_cam</name>
-            <uri>model://hd_camera</uri>
-            <pose>0 0 -0.05 0 1.57 0</pose>
-        </include>
         <joint
             name="ventral_cam_joint" type="fixed">
             <parent>base_link</parent>
