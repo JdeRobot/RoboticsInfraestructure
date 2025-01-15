@@ -197,8 +197,8 @@
                 <camera_info_topic>drone0/frontal_cam/camera_info</camera_info_topic>
                 <horizontal_fov>1.02974</horizontal_fov>
                 <image>
-                    <width>1920</width>
-                    <height>1080</height>
+                    <width>320</width>
+                    <height>240</height>
                     <format>R8G8B8</format>
                 </image>
                 <clip>
@@ -216,7 +216,7 @@
 
         <link name="ventral_cam">
             <inertial>
-                <pose>0 0 0.05 0 0 0</pose>
+                <pose>0 0 -0.05 0 1.57 0</pose>
                 <inertia>
                 <ixx>0.001</ixx>
                 <ixy>0.000</ixy>
@@ -228,7 +228,7 @@
                 <mass>0.035</mass>
             </inertial>
 
-            <pose>0 0 0.05 0 0 0</pose>
+            <pose>0 0 -0.05 0 1.57 0</pose>
             <sensor name="camera" type="camera">
                 <always_on>true</always_on>
                 <visualize>true</visualize>
@@ -239,8 +239,8 @@
                 <camera_info_topic>drone0/ventral_cam/camera_info</camera_info_topic>
                 <horizontal_fov>1.02974</horizontal_fov>
                 <image>
-                    <width>1920</width>
-                    <height>1080</height>
+                    <width>320</width>
+                    <height>240</height>
                     <format>R8G8B8</format>
                 </image>
                 <clip>
