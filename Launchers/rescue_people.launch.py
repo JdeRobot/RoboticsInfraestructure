@@ -13,6 +13,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
 
 
 def generate_launch_description():
@@ -48,10 +49,26 @@ def generate_launch_description():
         }.items(),
     )
 
+    start_gazebo_frontal_image_bridge_cmd = Node(
+        package='ros_gz_image',
+        executable='image_bridge',
+        arguments=['/drone0/frontal_cam/image_raw'],
+        output='screen',
+    )
+
+    start_gazebo_ventral_image_bridge_cmd = Node(
+        package='ros_gz_image',
+        executable='image_bridge',
+        arguments=['/drone0/ventral_cam/image_raw'],
+        output='screen',
+    )
+
     # Create the launch description and populate
     ld = LaunchDescription()
     ld.add_action(declare_use_simulator_cmd)
     ld.add_action(gzsim)
     ld.add_action(as2)
+    ld.add_action(start_gazebo_frontal_image_bridge_cmd)
+    ld.add_action(start_gazebo_ventral_image_bridge_cmd)
 
     return ld
