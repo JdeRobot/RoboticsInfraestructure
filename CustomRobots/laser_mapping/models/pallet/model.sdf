@@ -1,0 +1,53 @@
+<?xml version='1.0'?>
+<sdf version="1.6">
+    <model name="pallet">
+        <pose frame="">0 0 0.07 0 0 0</pose>
+        <self_collide>false</self_collide>
+        <!-- BASE_LINK FRAME -->
+        <link name="pallet_base">
+            <pose frame="">0 0 0 0 0 0</pose>
+            <collision name="pallet_top_collision">
+                <pose>0 0 0.125 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>1.22 0.8 0.04</size>
+                    </box>
+                </geometry>
+            </collision>
+            <collision name="pallet_center_collision">
+                <pose>0 0 0.055 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>1.22 0.1 0.1</size>
+                    </box>
+                </geometry>
+            </collision>
+            <collision name="pallet_left_collision">
+                <pose>0 -0.35 0.055 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>1.22 0.1 0.1</size>
+                    </box>
+                </geometry>
+            </collision>
+            <collision name="pallet_right_collision">
+                <pose>0 0.35 0.055 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>1.22 0.1 0.1</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="pallet_visual">
+                <pose frame="">0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>https://fuel.ignitionrobotics.org/1.0/movai/models/pallet/2/files/meshes/pallet.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+        <static>0</static>
+    </model>
+</sdf>
