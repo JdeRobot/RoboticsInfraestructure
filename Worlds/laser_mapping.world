@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <sdf version="1.9">
-  <world name="harmonic">
+  <world name="default">
     <plugin
       filename="gz-sim-physics-system"
       name="gz::sim::systems::Physics">
@@ -51,7 +51,7 @@
     </include>
     <include>
       <name>warehouse</name>
-      <uri>model://warehouse</uri>
+      <uri>model://mapping_warehouse</uri>
       <pose>0 0 -0.09 0 0 0</pose>
     </include>
     <include>
