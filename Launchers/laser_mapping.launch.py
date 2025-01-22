@@ -68,7 +68,7 @@ def generate_launch_description():
     )
 
     declare_yaw_cmd = DeclareLaunchArgument(
-        'Y', default_value='1.57079'
+        'Y', default_value='0.0'
     )
 
     robot_state_publisher_cmd = IncludeLaunchDescription(
