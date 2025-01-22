@@ -47,7 +47,7 @@
     <include>
       <name>turtlebot3_waffle</name>
       <uri>model://turtlebot3_waffle</uri>
-      <pose>14.25 -10.75 0 0 -0 1.57</pose>
+      <pose>14.25 -10.75 0 0 -0 3.14</pose>
     </include>
     <include>
       <name>warehouse</name>
