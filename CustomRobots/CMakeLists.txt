@@ -145,7 +145,10 @@ install(DIRECTORY
   turtlebot3/models
   turtlebot3/urdf 
   turtlebot3/params
-  
+
+  # LASER MAPPING LOC
+  laser_mapping/models
+
   restaurant/models
  
 
