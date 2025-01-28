@@ -54,13 +54,11 @@
       </ode>
     </physics>
 
-    <model name='AirconditionerA_01_001'>
-        <static>true</static>
-        <include>
-            <uri>model://aws_robomaker_residential_AirconditionerA_01</uri>
-        </include>
-        <pose frame=''>-9.199410 2.411230 2.084544 0 -0 0</pose>
-	</model>
+    <include>
+      <pose frame=''>-9.199410 2.411230 2.084544 0 -0 0</pose>
+      <name>AirconditionerA_01_001</name>
+      <uri>model://aws_robomaker_residential_AirconditionerA_01</uri>
+    </include>
 	
 	<model name='AirconditionerB_01_001'>
         <static>true</static>    
@@ -543,13 +541,13 @@
         </include>
         <pose frame=''>-1.199340 5.600688 0.502739 0 -0 -1.566274</pose>
 	</model>
-	<model name='RoomWindow_01_009'>
-        <static>true</static>    
-        <include>
-            <uri>model://aws_robomaker_residential_RoomWindow_01</uri>
-        </include>
-        <pose frame=''>-2.396624 4.387607 0.502739 0 -0 0</pose>
-	</model>
+
+    <include>
+      <pose>-2.396624 4.387607 0.502739 0 -0 0</pose>
+      <name>RoomWindow_01_009</name>
+      <uri>model://aws_robomaker_residential_RoomWindow_01</uri>
+    </include>
+	
 
     <!-- Lights !-->
     <!--
