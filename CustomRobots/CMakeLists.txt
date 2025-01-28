@@ -119,6 +119,11 @@ install(DIRECTORY
   amazon_hospital/worlds
   amazon_hospital/launch
 
+  # AMAZON SMALL HOUSE
+  amazon_small_house/models
+  amazon_small_house/worlds
+  amazon_small_house/launch
+
   # ACKERMANN LOGISTIC ROBOT
   ackermann_logistic_robot/launch
   ackermann_logistic_robot/models
