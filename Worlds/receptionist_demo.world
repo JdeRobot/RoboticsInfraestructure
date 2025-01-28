@@ -545,11 +545,11 @@
 
     <actor name="Female_Visitor_01_001">
         <skin>
-            <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+            <filename>model://WalkVisitor/model.dae</filename>
             <scale>1.0</scale>
         </skin>
         <animation name="walk">
-            <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+            <filename>model://WalkVisitor/model.dae</filename>
             <interpolate_x>true</interpolate_x>
         </animation>
         <script>
@@ -563,11 +563,11 @@
                 </waypoint>
                 <waypoint>
                     <time>2</time>
-                    <pose>6.1 -5.5 1 0 0 1.566274</pose>
+                    <pose>6.1 -6.0 1 0 0 1.566274</pose>
                 </waypoint>
                 <waypoint>
                     <time>2.5</time>
-                    <pose>6.1 -5.5 1 0 0 -1.566274</pose>
+                    <pose>6.1 -6.0 1 0 0 -1.566274</pose>
                 </waypoint>
                 <waypoint>
                     <time>4</time>
