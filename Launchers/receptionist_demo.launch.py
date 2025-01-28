@@ -30,7 +30,7 @@ def generate_launch_description():
 
     gazebo_models_path = os.path.join(package_dir, "models")
 
-    robot_launch_dir = "/opt/jderobot/Launchers/marker_visual_loc"
+    robot_launch_dir = "/opt/jderobot/Launchers/receptionist_demo"
     robot_model_dir = os.path.join(package_dir, 'models/turtlebot3_waffle')
     
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -104,12 +104,12 @@ def generate_launch_description():
     ld.add_action(set_env_vars_resources)
     ld.add_action(gazebo_server)
     # ld.add_action(gazebo_client)
-    ld.add_action(declare_x_cmd)
-    ld.add_action(declare_y_cmd)
-    ld.add_action(declare_z_cmd)
-    ld.add_action(declare_roll_cmd)
-    ld.add_action(declare_pitch_cmd)
-    ld.add_action(declare_yaw_cmd)
+    # ld.add_action(declare_x_cmd)
+    # ld.add_action(declare_y_cmd)
+    # ld.add_action(declare_z_cmd)
+    # ld.add_action(declare_roll_cmd)
+    # ld.add_action(declare_pitch_cmd)
+    # ld.add_action(declare_yaw_cmd)
     ld.add_action(world_entity_cmd)
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_robot_cmd)
