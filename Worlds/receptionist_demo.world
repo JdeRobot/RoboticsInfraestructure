@@ -423,13 +423,6 @@
         </include>
         <pose frame=''>7.15317 0.982767 0.817812 -0.001238 -0.000976 1.02476</pose>
 	</model>
-	<model name='Female_Visitor_01_001'>
-        <static>true</static>    
-        <include>
-            <uri>model://FemaleVisitor</uri>
-        </include>
-        <pose frame=''>6.1 -7 0 0 0 3.14</pose>
-	</model>
     <model name='Trash_01_002'>
         <static>true</static>    
         <include>
@@ -548,6 +541,45 @@
       <uri>model://aws_robomaker_residential_RoomWindow_01</uri>
     </include>
 	
+    <!-- Actors -->
+
+    <actor name="Female_Visitor_01_001">
+        <skin>
+            <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+            <scale>1.0</scale>
+        </skin>
+        <animation name="walk">
+            <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+            <interpolate_x>true</interpolate_x>
+        </animation>
+        <script>
+            <loop>true</loop>
+            <delay_start>0.000000</delay_start>
+            <auto_start>true</auto_start>
+            <trajectory id="0" type="walk" tension="0.6">
+                <waypoint>
+                    <time>0</time>
+                    <pose>6.1 -7 1 0 0 1.566274</pose>
+                </waypoint>
+                <waypoint>
+                    <time>2</time>
+                    <pose>6.1 -5.5 1 0 0 1.566274</pose>
+                </waypoint>
+                <waypoint>
+                    <time>2.5</time>
+                    <pose>6.1 -5.5 1 0 0 -1.566274</pose>
+                </waypoint>
+                <waypoint>
+                    <time>4</time>
+                    <pose>6.1 -7 1 0 0 -1.566274</pose>
+                </waypoint>
+                <waypoint>
+                    <time>4.5</time>
+                    <pose>6.1 -7 1 0 0 1.566274</pose>
+                </waypoint>
+            </trajectory>
+        </script>
+    </actor>
 
     <!-- Lights !-->
     <!--
