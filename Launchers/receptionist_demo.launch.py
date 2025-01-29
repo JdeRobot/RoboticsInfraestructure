@@ -77,6 +77,13 @@ def generate_launch_description():
         launch_arguments={"x_pose": x_pose, "y_pose": y_pose, "z_pose": z_pose}.items(),
     )
 
+    navigation_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(robot_launch_dir, "navigation.launch.py")
+        ),
+        launch_arguments={"use_sim_time": use_sim_time}.items(),
+    )
+
     world_entity_cmd = Node(
         package="ros_gz_sim",
         executable="create",
@@ -101,5 +108,6 @@ def generate_launch_description():
     ld.add_action(world_entity_cmd)
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_robot_cmd)
+    ld.add_action(navigation_cmd)
 
     return ld

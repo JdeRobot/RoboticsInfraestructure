@@ -123,6 +123,7 @@ install(DIRECTORY
   amazon_small_house/models
   amazon_small_house/worlds
   amazon_small_house/launch
+  amazon_small_house/maps
 
   # ACKERMANN LOGISTIC ROBOT
   ackermann_logistic_robot/launch
