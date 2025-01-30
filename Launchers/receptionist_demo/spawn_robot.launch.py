@@ -71,14 +71,14 @@ def generate_launch_description():
     start_gazebo_ros_image_bridge_cmd = Node(
         package='ros_gz_image',
         executable='image_bridge',
-        arguments=['/turtlebot3/camera/image_raw'],
+        arguments=['/camera/image_raw'],
         output='screen',
     )
 
     start_gazebo_ros_depth_bridge_cmd = Node(
         package='ros_gz_image',
         executable='image_bridge',
-        arguments=['/turtlebot3/camera/depth'],
+        arguments=['/camera/depth'],
         output='screen',
     )
 
