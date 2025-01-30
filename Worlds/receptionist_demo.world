@@ -216,20 +216,6 @@
         </include>
         <pose frame=''>1.221061 -1.592040 1.7873000 0 -0 0</pose>
 	</model>
-	<model name='Carpet_01_001'>
-        <static>true</static>    
-        <include>
-            <uri>model://aws_robomaker_residential_Carpet_01</uri>
-        </include>
-        <pose frame=''>0.785050 -1.106647 0.001106 0 -0 0</pose>
-	</model>
-    <model name='Carpet_01_002'>
-        <static>true</static>    
-        <include>
-            <uri>model://aws_robomaker_residential_Carpet_01</uri>
-        </include>
-        <pose frame=''>2.854050 3.45 0.000585 0 -0 0</pose>
-	</model>
 	<model name='SecurityCamera_01_001'>
         <static>true</static>    
         <include>
