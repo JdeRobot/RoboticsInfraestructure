@@ -68,7 +68,7 @@ RADI is built from **Ubuntu 20.04**.
 
 Main components of the RADI are:
 
-- [**ROS Noetic**](http://wiki.ros.org/noetic)
+- [**ROS2 Humble**](https://docs.ros.org/en/humble/)
 - [**Gazebo-11**](http://gazebosim.org/)
 - **Python 3.8**, main libraries:
     - [websocket_server](https://pypi.org/project/websocket-server/)
