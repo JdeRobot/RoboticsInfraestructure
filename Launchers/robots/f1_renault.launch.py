@@ -32,20 +32,20 @@ def generate_launch_description():
     robot_launch_dir = "/opt/jderobot/Launchers/robots/f1_renault"
     
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='1.0')
-    y_pose = LaunchConfiguration('y_pose', default='-1.5')
-    z_pose = LaunchConfiguration('z_pose', default='0.6')
+    x_pose = LaunchConfiguration('x_pose', default='53.462')
+    y_pose = LaunchConfiguration('y_pose', default='-10.734')
+    z_pose = LaunchConfiguration('z_pose', default='0.004')
 
     declare_x_cmd = DeclareLaunchArgument(
-        'x', default_value='1.0'
+        'x', default_value='53.462'
     )
 
     declare_y_cmd = DeclareLaunchArgument(
-        'y', default_value='-1.5'
+        'y', default_value='-10.734'
     )
 
     declare_z_cmd = DeclareLaunchArgument(
-        'z', default_value='0.6'
+        'z', default_value='0.004'
     )
 
     declare_roll_cmd = DeclareLaunchArgument(
@@ -57,7 +57,7 @@ def generate_launch_description():
     )
 
     declare_yaw_cmd = DeclareLaunchArgument(
-        'Y', default_value='1.57079'
+        'Y', default_value='-1.57'
     )
 
     robot_state_publisher_cmd = IncludeLaunchDescription(
