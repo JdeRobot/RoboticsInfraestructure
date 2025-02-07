@@ -89,6 +89,7 @@ install(DIRECTORY
   f1/models
   f1/launch
   f1/worlds
+  f1/params
 
   # ROOMBA
   roomba_robot/models
