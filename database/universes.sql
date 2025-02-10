@@ -137,7 +137,7 @@ COPY public.universes (id, name, world_id, robot_id) FROM stdin;
 26	Autoparking Lidar Simple: In line	5	0
 27	Vacuums House Roof	26	0
 28	Restaurant	21	0
-29	Vacuums House Markers	25	1
+29	Vacuums House Markers	25	0
 30	Laser Mapping Warehouse	12	0
 \.
 
@@ -171,7 +171,7 @@ COPY public.worlds (id, name, launch_file_path, ros_version, visualization, worl
 22	Simple Ackermann Circuit	/opt/jderobot/Launchers/simple_circuit_ackermann.launch.py	ROS2	gazebo_rae	gazebo
 23	Simple Circuit	/opt/jderobot/Launchers/simple_circuit.launch.py	ROS2	gazebo_rae	gazebo
 24	Vacuums House	/opt/jderobot/Launchers/vacuum_cleaner.launch.py	ROS2	gazebo_rae	gazebo
-25	Vacuums House Markers	/opt/jderobot/Launchers/worlds/marker_visual_loc.launch.py	ROS2	gzsim_rae	gazebo
+25	Vacuums House Markers	/opt/jderobot/Launchers/marker_visual_loc.launch.py	ROS2	gzsim_rae	gazebo
 26	Vacuums House Roof	/opt/jderobot/Launchers/montecarlo_visual_loc.launch.py	ROS2	gazebo_rae	gazebo
 27	Warehouse 1	/opt/jderobot/Launchers/amazon_robot.launch.py	ROS2	gazebo_rae	gazebo
 28	Warehouse 1 Ackermann	/opt/jderobot/Launchers/small_warehouse_with_ackermann_logistic_robot.launch.py	ROS2	gazebo_rae	gazebo
@@ -185,7 +185,6 @@ COPY public.worlds (id, name, launch_file_path, ros_version, visualization, worl
 
 COPY public.robots (id, name, launch_file_path) FROM stdin;
 0	None	None
-1	Turtlebot 3	/opt/jderobot/Launchers/robots/turtlebot3.launch.py
 \.
 
 --
