@@ -40,59 +40,44 @@
         </sphere>
       </geometry>
     </visual>
-    <sensor name="cam_f1_left" type="camera">
-        <pose>0.45000 0.040000 0.1000000 0.000000 -0.000000 0.0000000</pose>
-        <always_on>true</always_on>
-        <visualize>true</visualize>
-        <update_rate>30</update_rate>
-        <topic>F1ROS/cameraL/image_raw</topic>
-        <gz_frame_id>camera_top_body_left</gz_frame_id>
-        <camera name="cleft">
-          <camera_info_topic>F1ROS/cameraL/camera_info</camera_info_topic>
-          <horizontal_fov>1.570000</horizontal_fov>
-          <image>
-            <width>640</width>
-            <height>480</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.100000</near>
-            <far>15.000000</far>
-          </clip>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.0</stddev>
-          </noise>
-        </camera> 
-      </sensor>
+    <sensor name='cam_f1_left' type='camera'>
+      <pose>0.45000 0.040000 0.1000000 0.000000 -0.000000 0.0000000</pose>
+      <update_rate>20.000000</update_rate>
+      <camera name='cleft'>
+        <horizontal_fov>1.570000</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.100000</near>
+          <far>15.000000</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller_left" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>F1ROS/cameraL</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_top_body_left</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
   </link>
 
-  <!-- <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+  <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
       <commandTopic>F1ROS/cmd_vel</commandTopic>
       <odometryTopic>F1ROS/odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <odometryRate>20.0</odometryRate>
       <robotBaseFrame>xf1</robotBaseFrame>
-  </plugin> -->
-  <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
-    <!-- limits -->
-    <max_linear_acceleration>1.0</max_linear_acceleration>
-
-    <topic>F1ROS/cmd_vel</topic>
-
-    <frame_id>odom</frame_id>
-    <!-- <tf_topic>/tf</tf_topic> -->
-    <odom_publisher_frequency>30</odom_publisher_frequency>
-    <child_frame_id>base_footprint</child_frame_id>
-  </plugin>
-
-  <plugin filename="ignition-gazebo-odometry-publisher-system" name="ignition::gazebo::systems::OdometryPublisher">
-    <odom_frame>odom</odom_frame>
-    <robot_base_frame>base_footprint</robot_base_frame>
-    <odom_publish_frequency>50</odom_publish_frequency>
-    <odom_topic>F1ROS/odom</odom_topic>
-    <dimensions>3</dimensions>
   </plugin>
 </model>
 </sdf>
