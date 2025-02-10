@@ -113,7 +113,7 @@ COPY public.universes (id, name, world_id, robot_id) FROM stdin;
 2	City Large	8	0
 3	Rescue Default	20	0
 4	Warehouse 1	27	0
-5	Simple Circuit	23	2
+5	Simple Circuit	23	0
 6	Montreal Circuit	16	0
 7	Follow Person	10	0
 8	Follow Person Teleop	11	0
@@ -137,7 +137,7 @@ COPY public.universes (id, name, world_id, robot_id) FROM stdin;
 26	Autoparking Lidar Simple: In line	5	0
 27	Vacuums House Roof	26	0
 28	Restaurant	21	0
-29	Vacuums House Markers	25	3
+29	Vacuums House Markers	25	1
 30	Laser Mapping Warehouse	12	0
 \.
 
@@ -169,7 +169,7 @@ COPY public.worlds (id, name, launch_file_path, ros_version, visualization, worl
 20	Rescue Default	/opt/jderobot/Launchers/world.json	ROS2	gazebo_rae	drones
 21	Restaurant	/opt/jderobot/Launchers/restaurant.launch.py	ROS2	gazebo_rae	gazebo
 22	Simple Ackermann Circuit	/opt/jderobot/Launchers/simple_circuit_ackermann.launch.py	ROS2	gazebo_rae	gazebo
-23	Simple Circuit	/opt/jderobot/Launchers/simple_circuit.launch.py	ROS2	gzsim_rae	gazebo
+23	Simple Circuit	/opt/jderobot/Launchers/simple_circuit.launch.py	ROS2	gazebo_rae	gazebo
 24	Vacuums House	/opt/jderobot/Launchers/vacuum_cleaner.launch.py	ROS2	gazebo_rae	gazebo
 25	Vacuums House Markers	/opt/jderobot/Launchers/worlds/marker_visual_loc.launch.py	ROS2	gzsim_rae	gazebo
 26	Vacuums House Roof	/opt/jderobot/Launchers/montecarlo_visual_loc.launch.py	ROS2	gazebo_rae	gazebo
@@ -185,9 +185,7 @@ COPY public.worlds (id, name, launch_file_path, ros_version, visualization, worl
 
 COPY public.robots (id, name, launch_file_path) FROM stdin;
 0	None	None
-1	Vacuum	/opt/jderobot/Launchers/vacuum_cleaner.launch.py
-2	F1 Renault	/opt/jderobot/Launchers/robots/f1_renault.launch.py
-3	Turtlebot 3	/opt/jderobot/Launchers/robots/turtlebot3.launch.py
+1	Turtlebot 3	/opt/jderobot/Launchers/robots/turtlebot3.launch.py
 \.
 
 --
