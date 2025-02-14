@@ -131,6 +131,8 @@ install(DIRECTORY
 
   # DRONE_ASSETS
   drone_assets/models
+  drone_assets/worlds
+  drone_assets/bridges
   
   # GLOBAL_NAVIGATION
   taxi_navigator/models
